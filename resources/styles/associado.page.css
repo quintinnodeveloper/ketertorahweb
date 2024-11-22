@@ -1,0 +1,21 @@
+main .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 10px;
+}
+
+main .card .informativo p {
+    font-size: var(--font-medium-x);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+main .card .informativo span {
+    color: var(--ion-color-medium-shade);
+}
+
+main .card button {
+    /* border: dashed 2px red; */
+}

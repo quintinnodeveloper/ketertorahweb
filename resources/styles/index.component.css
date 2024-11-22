@@ -7,7 +7,7 @@
 body {
     font-family: "SpaceMono";
     font-size: var(--font-medium);
-    transition: all 600ms ease-in-out;
+    /* transition: all 600ms ease-in-out; */
 }
 
 a {
@@ -22,4 +22,20 @@ img {
     border-radius: 50%;
     object-fit: cover;
     border: solid 4px var(--ion-color-light-shade);
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background: var(--ion-color-primary);
+    color: var(--ion-color-light);
+    font-size: var(--font-small);
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+button:hover {
+    background: var(--ion-color-primary-tint);
 }
