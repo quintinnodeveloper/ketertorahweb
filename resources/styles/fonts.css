@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "Audiowide";
+    src: url("../fonts/Audiowide/Audiowide-Regular.ttf");
+}
+
+@font-face {
+    font-family: "SpaceMono";
+    src: url("../fonts/Space_Mono/SpaceMono-Regular.ttf");
+}
+
+:root {
+    --font-small: 0.6rem;
+    --font-medium: 1.2rem;
+    --font-large: 1.8rem;
+}
