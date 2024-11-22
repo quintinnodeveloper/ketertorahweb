@@ -24,3 +24,7 @@
 🟢 release:
 🟡 refactor: 
 🟣 document:
+
+> git config --global user.email "quintinno.developer@gmail.com"
+
+> git config --global user.name "Quintinno Developer"
