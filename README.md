@@ -16,6 +16,7 @@
 > KETER2024112202142851TORAH
 
     🟣 document: Documentação Básica do Projeto
+    🔵 feature: Implementar Estrutura Básica da Parte Administrativa
 
 ### Padrão de Versionamento
 
