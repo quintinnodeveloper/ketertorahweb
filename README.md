@@ -15,6 +15,8 @@
 
 > KETER2024112202142851TORAH
 
+    🟣 document: Documentação Básica do Projeto
+
 ### Padrão de Versionamento
 
 🚀 init: 
@@ -23,7 +25,7 @@
 🟠 bugfix:
 🟢 release:
 🟡 refactor: 
-🟣 document:
+🟣 document: 
 
 > git config --global user.email "quintinno.developer@gmail.com"
 
