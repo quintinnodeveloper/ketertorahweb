@@ -9,3 +9,16 @@ body {
     font-size: var(--font-medium);
     transition: all 600ms ease-in-out;
 }
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid 4px var(--ion-color-light-shade);
+}

@@ -1,4 +1,44 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
 nav .logomarca h1 {
     font-family: "Audiowide";
     font-size: var(--font-large);
+}
+
+nav .menus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+nav .menus .active {
+    font-weight: bold;
+}
+
+nav .dados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* border: dashed red 3px; */
+}
+
+nav .dados .nome-funcao {
+    text-align: center;
+}
+
+nav .dados .nome-funcao p {
+    font-weight: bold;
+}
+
+nav .dados .nome-funcao span {
+    color: var(--ion-color-medium);
+    font-size: var(--font-small);
 }
