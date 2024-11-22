@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../resources/styles/index.component.css"/>
     <link rel="stylesheet" href="../../resources/styles/nav.component.css"/>
     <link rel="stylesheet" href="../../resources/styles/associado.page.css"/>
+    <link rel="stylesheet" href="../../resources/styles/dialog.component.css"/>
     <title>Keter - Administrativo</title>
 </head>
 <body>
@@ -51,6 +52,53 @@
         </div>
 
     </main>
+
+    <div id="sombreamento" class="sombreamento"></div>
+
+    <dialog id="dialog">
+
+        <div class="dialog-header">
+            Cadastrar Novo Associado
+        </div>
+        <div class="dialog-content">
+
+            <div class="etapas">
+
+                <div class="etapa">
+                    Dados Básicos
+                </div>
+
+                <div class="etapa">
+                    Contato
+                </div>
+
+                <div class="etapa">
+                    Endereço
+                </div>
+
+                <div class="etapa">
+                    Dependentes
+                </div>
+
+                <div class="etapa">
+                    Documentos
+                </div>
+
+                <div class="etapa">
+                    Arquivos
+                </div>
+
+            </div>
+
+        </div>
+        <div class="dialog-footer">
+            <button id="botao-anterior">Anterior</button>
+            <button id="botao-proximo">Próximo</button>
+        </div>
+
+    </dialog>
+
+    <script src="../../resources/scripts/associado.page.js"></script>
     
 </body>
 </html>

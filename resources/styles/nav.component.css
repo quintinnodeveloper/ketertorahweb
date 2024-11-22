@@ -27,7 +27,6 @@ nav .dados {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    /* border: dashed red 3px; */
 }
 
 nav .dados .nome-funcao {
