@@ -1,6 +1,6 @@
 const botaoAnterior = document.querySelectorAll(".botao-anterior");
 const botaoProximo = document.querySelectorAll(".botao-proximo");
-const etapas = document.querySelectorAll(".etapas")
+const etapas = document.querySelectorAll(".etapas");
 
 let indiceEtapaAtual = 0;
 
