@@ -18,6 +18,10 @@
     🟣 document: Documentação Básica do Projeto
     🔵 feature: Implementar Estrutura Básica da Parte Administrativa
 
+> KETER2024110224090915TORAH
+
+    🔵 feature: Implementar Cadastro de Associados
+
 ### Padrão de Versionamento
 
 🚀 init: 
