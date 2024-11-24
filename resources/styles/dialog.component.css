@@ -6,7 +6,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(3px);
     transition: all 1s ease-in-out;
     z-index: 9;
 }
@@ -31,6 +31,11 @@
     width: 100%;
 }
 
+#dialog form h2 {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
 #dialog a {
     background: blue;
     color: white;
@@ -48,10 +53,21 @@
 }
 
 #dialog .botoes {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+    display: flex;
     gap: 1.5rem;
     margin-top: 20px;
+}
+
+#dialog .botoes a {
+    width: 100%;
+}
+
+#dialog .botoes .botao-cancelar {
+    background: white;
+    color: red;
+    border: solid red 2px;
 }
 
 #dialog .etapas {
