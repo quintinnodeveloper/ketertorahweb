@@ -33,3 +33,10 @@ botaoCadastrar.addEventListener("click", function() {
     sombreamento.style.display = "none";
     dialog.close();
 });
+
+const botaoCancelar = document.getElementById("botaoCancelar");
+
+botaoCancelar.addEventListener("click", function() {
+    sombreamento.style.display = "none";
+    dialog.close();
+});
