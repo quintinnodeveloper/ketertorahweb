@@ -1,0 +1,15 @@
+.width10 {
+    flex: 10%;
+}
+
+.width20 {
+    flex: 20%;
+}
+
+.width80 {
+    flex: 80%;
+}
+
+.width90 {
+    flex: 90%;
+}

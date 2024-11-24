@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../resources/styles/nav.component.css"/>
     <link rel="stylesheet" href="../../resources/styles/associado.page.css"/>
     <link rel="stylesheet" href="../../resources/styles/dialog.component.css"/>
+    <link rel="stylesheet" href="../../resources/styles/form.component.css"/>
     <title>Keter - Administrativo</title>
 </head>
 <body>
@@ -63,7 +64,7 @@
 
             <div class="etapas active">
                 <div class="row">
-                    <div class="campos">
+                    <div class="campos width20">
                         <label>Tipo de Pessoa</label>
                         <select>
                             <option value="0">Selecione</option>
@@ -71,7 +72,7 @@
                             <option value="2">Pessoa Jurídica</option>
                         </select>
                     </div>
-                    <div class="campos">
+                    <div class="campos width80">
                         <label>Nome Completo</label>
                         <input type="text"/>
                     </div>
@@ -82,8 +83,13 @@
                         <input type="date"/>
                     </div>
                     <div class="campos">
-                        <label>Nacionalidade</label>
-                        <input type="text"/>
+                        <label>País Nascimento</label>
+                        <select>
+                            <option value="0">Selecione</option>
+                            <option value="1">Brasil</option>
+                            <option value="2">Argentina</option>
+                            <option value="3">Israel</option>
+                        </select>
                     </div>
                 </div>
                 <div class="botoes" style="width: 100%;">

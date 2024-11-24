@@ -30,7 +30,8 @@
 🟠 bugfix:
 🟢 release:
 🟡 refactor: 
-🟣 document: 
+🟣 document:
+🔨 resource:  
 
 > git config --global user.email "quintinno.developer@gmail.com"
 

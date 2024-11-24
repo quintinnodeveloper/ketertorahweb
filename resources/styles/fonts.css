@@ -8,6 +8,11 @@
     src: url("../fonts/Space_Mono/SpaceMono-Regular.ttf");
 }
 
+@font-face {
+    font-family: "Questrial";
+    src: url("../fonts/Questrial/Questrial-Regular.ttf");
+}
+
 :root {
     --font-small: 1rem;
     --font-medium: 1.2rem;
