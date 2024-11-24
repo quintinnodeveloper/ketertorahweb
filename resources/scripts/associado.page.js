@@ -6,11 +6,3 @@ abrirModal.addEventListener("click", function() {
     sombreamento.style.display = "block";
     dialog.show();
 });
-
-const botaoCadastrar = document.getElementById("botaoCadastrar");
-
-botaoCadastrar.addEventListener("click", function() {
-    console.log("Cadastrar...");
-    sombreamento.style.display = "none";
-    dialog.close();
-});

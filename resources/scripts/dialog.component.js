@@ -25,3 +25,11 @@ function movimentarEtapa() {
     });
     etapas[indiceEtapaAtual].classList.add("active");
 }
+
+const botaoCadastrar = document.getElementById("botaoCadastrar");
+
+botaoCadastrar.addEventListener("click", function() {
+    window.location.reload();
+    sombreamento.style.display = "none";
+    dialog.close();
+});
