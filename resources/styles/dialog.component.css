@@ -23,27 +23,38 @@
     z-index: 10;
 }
 
-#dialog .dialog-header {
-    margin-bottom: 20px;
-    font-size: var(--font-medium-x);
+#dialog form {
+    width: clamp(320px, 30%, 430px);
+    margin: auto;
+    padding: 1.5rem;
+}
+
+#dialog a {
+    background: blue;
+    color: white;
+    padding: 0.75rem;
+    display: block;
     font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 0.25rem;
+    transition: 0.2s;
 }
 
-#dialog .dialog-content .etapas {
-    width: 500%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} 
-
-#dialog .dialog-content .etapa {
-    border: dashed red 1px;
-    overflow: hidden;
+#dialog a:hover {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-#dialog .dialog-footer {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#dialog .botoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+#dialog .etapas {
+    display: none;
+}
+
+#dialog .active {
+    display: block;
 }

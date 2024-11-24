@@ -55,50 +55,49 @@
 
     <div id="sombreamento" class="sombreamento"></div>
 
-    <dialog id="dialog">
+    <dialog id="dialog" open>
 
-        <div class="dialog-header">
-            Cadastrar Novo Associado
-        </div>
-        <div class="dialog-content">
+        <form>
 
-            <div class="etapas">
+            <h2>Cadastro de Associados</h2>
 
-                <div class="etapa">
-                    Dados Básicos
+            <div class="etapas active">
+                Etapa 1
+                <div>
+                    <a class="botao-proximo">Próximo</a>
                 </div>
-
-                <div class="etapa">
-                    Contato
-                </div>
-
-                <div class="etapa">
-                    Endereço
-                </div>
-
-                <div class="etapa">
-                    Dependentes
-                </div>
-
-                <div class="etapa">
-                    Documentos
-                </div>
-
-                <div class="etapa">
-                    Arquivos
-                </div>
-
             </div>
 
-        </div>
-        <div class="dialog-footer">
-            <button id="botao-anterior">Anterior</button>
-            <button id="botao-proximo">Próximo</button>
-        </div>
+            <div class="etapas">
+                Etapa 2
+                <div class="botoes">
+                    <a class="botao-anterior">Anterior</a>
+                    <a class="botao-proximo">Próximo</a>
+                </div>
+            </div>
+
+            <div class="etapas">
+                Etapa 3
+                <div class="botoes">
+                    <a class="botao-anterior">Anterior</a>
+                    <a class="botao-proximo">Próximo</a>
+                </div>
+            </div>
+
+            <div class="etapas">
+                Etapa 4
+                <div class="botoes">
+                    <a class="botao-anterior">Anterior</a>
+                    <a class="botao-cadastrar">Cadastrar</a>
+                </div>
+            </div>
+
+        </form>
 
     </dialog>
 
     <script src="../../resources/scripts/associado.page.js"></script>
+    <script src="../../resources/scripts/dialog.component.js"></script>
     
 </body>
 </html>
