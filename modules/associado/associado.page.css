@@ -39,6 +39,10 @@ main .card .card-content {
     /* border: dashed red 2px; */
 }
 
+main .card .card-content table tbody:hover {
+    background: var(--ion-color-light-tint);
+}
+
 main .card .card-content table tbody td img {
     width: 25px;
     height: 25px;
