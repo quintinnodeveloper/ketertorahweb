@@ -1,5 +1,7 @@
 import { AssociadoModel } from "../model/associado.model.js";
 import { create } from "../services/associado.service.js";
+import { isVerificarDuplicidade } from "../utility/localstorage.utility.js";
+import { fecharDialog } from "../../resources/scripts/dialog.component.js";
 
 const abrirModal = document.getElementById("abrir-modal");
 const dialog = document.getElementById("dialog");
@@ -13,6 +15,7 @@ abrirModal.addEventListener("click", function () {
 document.getElementById("botaoCadastrar").addEventListener("click", function () {
 
     try {
+        
         const tipoPessoaID = document.getElementById("tipoPessoa").value;
         const nomeCompleto = document.getElementById("nomeCompleto").value;
         const dataNascimento = document.getElementById("tipoPessoa").value;
@@ -22,9 +25,14 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
             tipoPessoaID, nomeCompleto, dataNascimento, paisNascimentoID
         );
 
-        create(associado);
+        if (!isVerificarDuplicidade(associado.nomeCompleto)) {
+            create(associado);
+            console.log("Associado cadastrado com sucesso!");
+            fecharDialog();
+        } else {
+            throw new Error("Associado já cadastrado no sistema!");
+        }
 
-        console.log("Associado cadastrado com sucesso!");
     } catch (error) {
         console.log("Falha ao tentar cadastrar o Associado!");
         console.error(error);

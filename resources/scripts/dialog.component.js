@@ -26,13 +26,13 @@ function movimentarEtapa() {
     etapas[indiceEtapaAtual].classList.add("active");
 }
 
-const botaoCadastrar = document.getElementById("botaoCadastrar");
+// const botaoCadastrar = document.getElementById("botaoCadastrar");
 
-botaoCadastrar.addEventListener("click", function() {
-    window.location.reload();
-    sombreamento.style.display = "none";
-    dialog.close();
-});
+// botaoCadastrar.addEventListener("click", function() {
+//     window.location.reload();
+//     sombreamento.style.display = "none";
+//     dialog.close();
+// });
 
 const botaoCancelar = document.getElementById("botaoCancelar");
 
@@ -40,3 +40,8 @@ botaoCancelar.addEventListener("click", function() {
     sombreamento.style.display = "none";
     dialog.close();
 });
+
+export async function fecharDialog() {
+    sombreamento.style.display = "none";
+    dialog.close();
+}
