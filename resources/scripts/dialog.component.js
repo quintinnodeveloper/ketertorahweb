@@ -29,7 +29,7 @@ function movimentarEtapa() {
 const botaoCadastrar = document.getElementById("botaoCadastrar");
 
 botaoCadastrar.addEventListener("click", function() {
-    window.location.reload();
+    // window.location.reload();
     sombreamento.style.display = "none";
     dialog.close();
 });

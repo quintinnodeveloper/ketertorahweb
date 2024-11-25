@@ -1,0 +1,1 @@
+export const DOC_ASSOCIADO = "doc_associado";

@@ -21,6 +21,7 @@
 > KETER2024110224090915TORAH
 
     🔵 feature: Implementar Cadastro de Associados
+    🔵 feature: Implementar operações de persistência no localstorage
 
 ### Padrão de Versionamento
 

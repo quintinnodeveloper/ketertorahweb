@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../resources/styles/colors.css"/>
     <link rel="stylesheet" href="../../resources/styles/index.component.css"/>
     <link rel="stylesheet" href="../../resources/styles/nav.component.css"/>
-    <link rel="stylesheet" href="../../resources/styles/associado.page.css"/>
+    <link rel="stylesheet" href="../../modules/associado/associado.page.css"/>
     <link rel="stylesheet" href="../../resources/styles/dialog.component.css"/>
     <link rel="stylesheet" href="../../resources/styles/form.component.css"/>
     <title>Keter - Administrativo</title>
@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="campos width20">
                         <label>Tipo de Pessoa</label>
-                        <select>
+                        <select id="tipoPessoa">
                             <option value="0">Selecione</option>
                             <option value="1">Pessoa Física</option>
                             <option value="2">Pessoa Jurídica</option>
@@ -75,17 +75,17 @@
                     </div>
                     <div class="campos width60">
                         <label>Nome Completo</label>
-                        <input type="text"/>
+                        <input id="nomeCompleto" type="text"/>
                     </div>
                     <div class="campos width20">
                         <label>Data de Nascimento</label>
-                        <input type="date"/>
+                        <input id="dataNascimento" type="date"/>
                     </div>
                 </div>
                 <div class="row">
                     <div class="campos">
                         <label>País Nascimento</label>
-                        <select>
+                        <select id="paisNascimento">
                             <option value="0">Selecione</option>
                             <option value="1">Brasil</option>
                             <option value="2">Argentina</option>
@@ -127,8 +127,9 @@
 
     </dialog>
 
-    <script src="../../resources/scripts/associado.page.js"></script>
+    <script type="module" src="../../modules/associado/associado.page.js"></script>
     <script src="../../resources/scripts/dialog.component.js"></script>
+    <script type="module" src="../../modules/services/associado.service.js"></script>
     
 </body>
 </html>
