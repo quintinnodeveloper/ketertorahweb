@@ -1,3 +1,4 @@
+import { AssociadoModel } from "../model/associado.model.js";
 import { create } from "../services/associado.service.js";
 
 const abrirModal = document.getElementById("abrir-modal");
@@ -16,14 +17,12 @@ document.getElementById("botaoCadastrar").addEventListener("click", function() {
     const dataNascimento = document.getElementById("tipoPessoa").value;
     const paisNascimentoID = document.getElementById("tipoPessoa").value;
 
-    const associado = {
-        tipoPessoaID: tipoPessoaID,
-        nomeCompleto: nomeCompleto,
-        dataNascimento: dataNascimento,
-        paisNascimentoID: paisNascimentoID
-    }
+    const associado = new AssociadoModel(
+        tipoPessoaID, nomeCompleto, dataNascimento, paisNascimentoID
+    );
 
     create(associado);
 
     console.log("Associado cadastrado com sucesso!");
+
 });
