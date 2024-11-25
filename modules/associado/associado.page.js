@@ -1,6 +1,6 @@
 import { AssociadoModel } from "../model/associado.model.js";
 import { create } from "../services/associado.service.js";
-import { isVerificarDuplicidade } from "../utility/localstorage.utility.js";
+import { isVerificarDuplicidade, getAssociados } from "../utility/localstorage.utility.js";
 import { fecharDialog } from "../../resources/scripts/dialog.component.js";
 
 const abrirModal = document.getElementById("abrir-modal");
@@ -15,7 +15,7 @@ abrirModal.addEventListener("click", function () {
 document.getElementById("botaoCadastrar").addEventListener("click", function () {
 
     try {
-        
+
         const tipoPessoaID = document.getElementById("tipoPessoa").value;
         const nomeCompleto = document.getElementById("nomeCompleto").value;
         const dataNascimento = document.getElementById("tipoPessoa").value;
@@ -39,3 +39,7 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
     }
 
 });
+
+let associadoArray = getAssociados();
+
+console.log(associadoArray);
