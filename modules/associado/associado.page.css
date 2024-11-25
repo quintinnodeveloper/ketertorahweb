@@ -4,6 +4,10 @@ main .card {
     align-items: center;
     margin-top: 40px;
     padding: 10px;
+    border: red solid 2px;
+    margin: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 main .card .informativo p {

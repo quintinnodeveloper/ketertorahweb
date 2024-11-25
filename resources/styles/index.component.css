@@ -5,7 +5,8 @@
 }
 
 body {
-    font-family: "Questrial";
+    /* font-family: "Questrial"; */
+    font-family: "SpaceGrotesk";
     font-size: var(--font-medium);
     /* transition: all 600ms ease-in-out; */
 }
