@@ -5,7 +5,6 @@ export class AssociadoModel {
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
         this.paisNascimentoID = paisNascimentoID;
-
     }
 
 }

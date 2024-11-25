@@ -23,6 +23,7 @@
     🔵 feature: Implementar Cadastro de Associados
     🔵 feature: Implementar operações de persistência no localstorage
     🔵 feature: Apresentar dados cadastrados na tela principal de associados
+    🔵 feature: Apresentar dados cadastrados na tela principal de associados na table
 
 ### Padrão de Versionamento
 
