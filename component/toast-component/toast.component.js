@@ -45,5 +45,3 @@ export function apresentarToastWarning() {
         toast.classList.remove("show");
     }, 3000);
 }
-
-apresentarToastSuccess();

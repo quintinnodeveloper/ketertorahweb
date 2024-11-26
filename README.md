@@ -28,6 +28,10 @@
     🟡 refactor: Ajustes no layout
     🔵 feature: Implementar toast de erro
 
+> KETER2024110226163607TORAH
+
+    🔵 feature: Implementar validação e ordenação dos dados dos associados
+
 ### Padrão de Versionamento
 
 🚀 init: 

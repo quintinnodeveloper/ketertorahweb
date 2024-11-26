@@ -1,3 +1,5 @@
+import { isFormularioAssociadoValido } from "../../modules/associado/associado.page.js";
+
 const botaoAnterior = document.querySelectorAll(".botao-anterior");
 const botaoProximo = document.querySelectorAll(".botao-proximo");
 const etapas = document.querySelectorAll(".etapas");
@@ -13,8 +15,10 @@ botaoAnterior.forEach( botao => {
 
 botaoProximo.forEach( botao => {
     botao.addEventListener("click", function() {
-        indiceEtapaAtual++;
-        movimentarEtapa();
+        if (isFormularioAssociadoValido()) {
+            indiceEtapaAtual++;
+            movimentarEtapa();
+        }
     });
 });
 
@@ -45,3 +49,6 @@ export async function fecharDialog() {
     sombreamento.style.display = "none";
     dialog.close();
 }
+
+// Apresentar sombreamento para testes
+// sombreamento.style.display = "block";
