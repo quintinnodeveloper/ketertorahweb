@@ -15,5 +15,3 @@ export function apresentarToastSuccess() {
         toast.classList.remove("show");
     }, 3000);
 }
-
-apresentarToastSuccess();
