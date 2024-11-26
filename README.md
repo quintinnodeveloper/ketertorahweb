@@ -24,6 +24,7 @@
     🔵 feature: Implementar operações de persistência no localstorage
     🔵 feature: Apresentar dados cadastrados na tela principal de associados
     🔵 feature: Apresentar dados cadastrados na tela principal de associados na table
+    🔵 feature: Criar componente de Toast para emissão de mensagens
 
 ### Padrão de Versionamento
 

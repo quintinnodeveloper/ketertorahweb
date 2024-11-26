@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../modules/associado/associado.page.css"/>
     <link rel="stylesheet" href="../../resources/styles/dialog.component.css"/>
     <link rel="stylesheet" href="../../resources/styles/form.component.css"/>
+    <link rel="stylesheet" href="../../component/toast-component/toast.component.css"/>
     <title>Keter - Administrativo</title>
 </head>
 <body>
@@ -153,9 +154,24 @@
 
     </dialog>
 
+    <div id="toast" class="toast">
+        <div class="toast-header">
+            <img src="../../resources/images/icons/badge-check.svg" class="icone-sucesso"/>
+            <p>Sucesso</p>
+            <img id="fecharToast" src="../../resources/images/icons/circle-x.svg" class="icone-fechar" style="cursor: pointer;"/>
+        </div>
+        <div class="toast-content">
+            <p>Operação Realizada com Sucesso!</p>
+        </div>
+        <div class="toast-footer">
+            <span id="barraProgresso">&nbsp;</span>
+        </div>
+    </div>
+
     <script type="module" src="../../modules/associado/associado.page.js"></script>
     <script type="module" src="../../resources/scripts/dialog.component.js"></script>
     <script type="module" src="../../modules/services/associado.service.js"></script>
+    <script type="module" src="../../component/toast-component/toast.component.js"></script>
     
 </body>
 </html>

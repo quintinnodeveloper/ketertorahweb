@@ -2,6 +2,7 @@ import { AssociadoModel } from "../model/associado.model.js";
 import { create } from "../services/associado.service.js";
 import { isVerificarDuplicidade, getAssociados } from "../utility/localstorage.utility.js";
 import { fecharDialog } from "../../resources/scripts/dialog.component.js";
+import { apresentarToastSuccess } from "../../component/toast-component/toast.component.js";
 
 const abrirModal = document.getElementById("abrir-modal");
 const dialog = document.getElementById("dialog");
@@ -28,6 +29,7 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
 
         if (!isVerificarDuplicidade(associado.nomeCompleto)) {
             create(associado);
+            apresentarToastSuccess();
             console.log("Associado cadastrado com sucesso!");
             fecharDialog();
             exibir();
