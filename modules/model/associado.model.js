@@ -1,6 +1,7 @@
 export class AssociadoModel {
 
-    constructor(tipoPessoaID, nomeCompleto, dataNascimento, paisNascimentoID) {
+    constructor(codigo, tipoPessoaID, nomeCompleto, dataNascimento, paisNascimentoID) {
+        this.codigo = codigo;
         this.tipoPessoaID = tipoPessoaID;
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
