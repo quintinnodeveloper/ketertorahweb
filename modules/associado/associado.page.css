@@ -38,7 +38,7 @@ main .card .card-content {
     margin-top: 40px;
 }
 
-main .card .card-content table tbody:hover {
+main .card .card-content table tbody tr:hover {
     background: var(--ion-color-light-tint);
 }
 
@@ -72,7 +72,6 @@ main .card .card-content table tbody td:nth-child(6) {
 }
 
 main .card .card-content table td {
-    /* border: dashed red 2px; */
     height: 60px;
     border-bottom: 1px solid var(--ion-color-light-tint);
 }
