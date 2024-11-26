@@ -32,7 +32,7 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
             apresentarToastSuccess();
             console.log("Associado cadastrado com sucesso!");
             fecharDialog();
-            exibir();
+            exibirTabela();
         } else {
             throw new Error("Associado já cadastrado no sistema!");
         }

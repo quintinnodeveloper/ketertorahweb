@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="../../resources/styles/fonts.css"/>
-    <link rel="stylesheet" href="../../resources/styles/colors.css"/>
-    <link rel="stylesheet" href="../../resources/styles/index.component.css"/>
-    <link rel="stylesheet" href="../../resources/styles/nav.component.css"/>
-    <link rel="stylesheet" href="../../modules/associado/associado.page.css"/>
-    <link rel="stylesheet" href="../../resources/styles/dialog.component.css"/>
-    <link rel="stylesheet" href="../../resources/styles/form.component.css"/>
-    <link rel="stylesheet" href="../../component/toast-component/toast.component.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../resources/styles/fonts.css" />
+    <link rel="stylesheet" href="../../resources/styles/colors.css" />
+    <link rel="stylesheet" href="../../resources/styles/index.component.css" />
+    <link rel="stylesheet" href="../../resources/styles/nav.component.css" />
+    <link rel="stylesheet" href="../../modules/associado/associado.page.css" />
+    <link rel="stylesheet" href="../../resources/styles/dialog.component.css" />
+    <link rel="stylesheet" href="../../resources/styles/form.component.css" />
+    <link rel="stylesheet" href="../../component/toast-component/toast.component.css" />
     <title>Keter - Administrativo</title>
 </head>
+
 <body>
 
     <nav>
@@ -31,7 +33,7 @@
         </div>
 
         <div class="dados">
-            <img src="../../resources/images/photos/profile.jpg"/>
+            <img src="../../resources/images/photos/profile.jpg" />
             <div class="nome-funcao">
                 <p>José Quintinno</p>
                 <span>Presidência</span>
@@ -54,8 +56,8 @@
                 </div>
                 <div class="filtros">
                     <div class="campo-pesquisar">
-                        <img src="../../resources/images/icons/search.svg"/>
-                        <input id="filtrarAssociado" type="text" placeholder="Pesquisar..."/>
+                        <img src="../../resources/images/icons/search.svg" />
+                        <input id="filtrarAssociado" type="text" placeholder="Pesquisar..." />
                     </div>
                     <div class="campo-fitrar"></div>
                 </div>
@@ -72,7 +74,14 @@
                         <!-- <th>Situação Financeira</th> -->
                         <th>Detalhes</th>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        <!-- <td>1</td>
+                        <td>Agatha Agatha Amanda da Mata</td>
+                        <td>(63) 99232-3355</td>
+                        <td>01/01/2024</td>
+                        <td>Em Dia</td>
+                        <td><img src="../../resources/images/icons/external-link.svg" /></td> -->
+                    </tbody>
                 </table>
 
             </div>
@@ -102,11 +111,11 @@
                     </div>
                     <div class="campos width60">
                         <label>Nome Completo</label>
-                        <input id="nomeCompleto" type="text"/>
+                        <input id="nomeCompleto" type="text" />
                     </div>
                     <div class="campos width20">
                         <label>Data de Nascimento</label>
-                        <input id="dataNascimento" type="date"/>
+                        <input id="dataNascimento" type="date" />
                     </div>
                 </div>
                 <div class="row">
@@ -156,9 +165,10 @@
 
     <div id="toast" class="toast">
         <div class="toast-header">
-            <img src="../../resources/images/icons/badge-check.svg" class="icone-sucesso"/>
+            <img src="../../resources/images/icons/badge-check.svg" class="icone-sucesso" />
             <p>Sucesso</p>
-            <img id="fecharToast" src="../../resources/images/icons/circle-x.svg" class="icone-fechar" style="cursor: pointer;"/>
+            <img id="fecharToast" src="../../resources/images/icons/circle-x.svg" class="icone-fechar"
+                style="cursor: pointer;" />
         </div>
         <div class="toast-content">
             <p>Operação Realizada com Sucesso!</p>
@@ -172,6 +182,7 @@
     <script type="module" src="../../resources/scripts/dialog.component.js"></script>
     <script type="module" src="../../modules/services/associado.service.js"></script>
     <script type="module" src="../../component/toast-component/toast.component.js"></script>
-    
+
 </body>
+
 </html>

@@ -46,8 +46,9 @@
 
 #toast .toast-footer span {
     background: var(--ion-color-success-shade);
-    display: block;
+    display: blo;
     height: 7px;
+    border-radius: 0px 0px 10px 10px;
     width: 0%;
     padding: 0;
     margin-top: 22px;

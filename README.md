@@ -26,6 +26,7 @@
     🔵 feature: Apresentar dados cadastrados na tela principal de associados na table
     🔵 feature: Criar componente de Toast para emissão de mensagens
     🟡 refactor: Ajustes no layout
+    🔵 feature: Implementar toast de erro
 
 ### Padrão de Versionamento
 
