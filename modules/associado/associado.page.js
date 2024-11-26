@@ -44,7 +44,7 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
 
 });
 
-function exibir() {
+function exibirTabela() {
 
     let associadoArray = getAssociados();
 
@@ -66,4 +66,38 @@ function exibir() {
 
 }
 
-document.addEventListener('DOMContentLoaded', exibir);
+document.addEventListener('DOMContentLoaded', exibirTabela);
+
+document.getElementById("filtrarAssociado").addEventListener("input", function () {
+    let pesquisa = this.value.toLowerCase();
+    let associadoArray = getAssociados();
+    let associadosFiltrados = associadoArray.filter(associado =>
+        associado.nomeCompleto.toLowerCase().includes(pesquisa)
+    );
+    exibirTabelaFiltro(associadosFiltrados);
+});
+
+function exibirTabelaFiltro(associados) {
+    const tbody = document.querySelector("table tbody");
+    tbody.innerHTML = "";
+
+    if (associados.length === 0) {
+        debugger
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td colspan="3" style="text-align: center; color: red;">Associado Não Encontrado!</td>`;
+        tbody.appendChild(tr);
+        return;
+    }
+
+    associados.forEach((associado, index) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${associado.nomeCompleto}</td>
+            <td>
+                <img src="../../resources/images/icons/external-link.svg" alt="Detalhes" />
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
