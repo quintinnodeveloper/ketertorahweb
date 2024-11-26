@@ -48,6 +48,8 @@ function exibirTabela() {
 
     let associadoArray = getAssociados();
 
+    associadoArray.sort((a, b) => a.nomeCompleto.localeCompare(b.nomeCompleto));
+    
     const tbody = document.querySelector("table tbody");
 
     tbody.innerHTML = "";
@@ -82,7 +84,6 @@ function exibirTabelaFiltro(associados) {
     tbody.innerHTML = "";
 
     if (associados.length === 0) {
-        debugger
         const tr = document.createElement("tr");
         tr.innerHTML = `<td colspan="3" style="text-align: center; color: red;">Associado Não Encontrado!</td>`;
         tbody.appendChild(tr);
@@ -100,4 +101,43 @@ function exibirTabelaFiltro(associados) {
         `;
         tbody.appendChild(tr);
     });
+}
+
+export function isFormularioAssociadoValido() {
+
+    const tipoPessoaID = Number(document.getElementById("tipoPessoa").value);
+    const nomeCompleto = document.getElementById("nomeCompleto").value.trim();
+    const dataNascimento = document.getElementById("dataNascimento").value;
+    const paisNascimentoID = Number(document.getElementById("paisNascimento").value);
+
+    document.getElementById("tipoPessoa").classList.remove("invalid");
+    document.getElementById("nomeCompleto").classList.remove("invalid");
+    document.getElementById("dataNascimento").classList.remove("invalid");
+    document.getElementById("paisNascimento").classList.remove("invalid");
+
+    if (tipoPessoaID === 0) {
+        document.getElementById("tipoPessoa").classList.add("invalid");
+        return false;
+    }
+
+    if (nomeCompleto === "") {
+        document.getElementById("nomeCompleto").classList.add("invalid");
+        return false;
+    }
+
+    if (dataNascimento === "") {
+        document.getElementById("dataNascimento").classList.add("invalid");
+        return false;
+    }
+
+    if (paisNascimentoID === 0) {
+        document.getElementById("paisNascimento").classList.add("invalid");
+        return false;
+    }
+
+    return true;
+}
+
+function limparDadosFormulario() {
+    document.getElementById("tipoPessoa").value = "0";
 }
