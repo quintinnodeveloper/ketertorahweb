@@ -153,11 +153,15 @@
 
                     <div class="campos">
                         <label>Tipo Sanguíneo</label>
-                        <select id="paisNascimento">
+                        <select id="tipoSanguineo">
                             <option value="0">Selecione</option>
-                            <option value="1">Brasil</option>
-                            <option value="2">Argentina</option>
-                            <option value="3">Israel</option>
+                            <option value="1">O+</option>
+                            <option value="2">A+</option>
+                            <option value="3">B+</option>
+                            <option value="4">AB+</option>
+                            <option value="5">0-</option>
+                            <option value="6">A-</option>
+                            <option value="7">AB-/B-</option>
                         </select>
                     </div>
 
@@ -169,7 +173,24 @@
             </div>
 
             <div class="etapas">
-                Etapa 3
+                <div class="row">
+                    <div class="campos width20">
+                        <label>Tipo de Pessoa</label>
+                        <select id="tipoPessoa">
+                            <option value="0">Selecione</option>
+                            <option value="1">Pessoa Física</option>
+                            <option value="2">Pessoa Jurídica</option>
+                        </select>
+                    </div>
+                    <div class="campos width60">
+                        <label>Nome Completo</label>
+                        <input id="nomeCompleto" type="text" />
+                    </div>
+                    <div class="campos width20">
+                        <label>Data de Nascimento</label>
+                        <input id="dataNascimento" type="date" />
+                    </div>
+                </div>
                 <div class="botoes">
                     <a class="botao-anterior">Anterior</a>
                     <a class="botao-proximo">Próximo</a>

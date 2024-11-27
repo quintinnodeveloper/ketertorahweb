@@ -138,6 +138,12 @@ export function isFormularioAssociadoValido() {
     return true;
 }
 
-function limparDadosFormulario() {
+export function limparDadosFormulario() {
     document.getElementById("tipoPessoa").value = "0";
+    document.getElementById("nomeCompleto").value = "";
+    document.getElementById("dataNascimento").value = "";
+    document.getElementById("paisNascimento").value = "0";
+    document.getElementById("corRaca").value = "0";
+    document.getElementById("estadoCivil").value = "0";
+    document.getElementById("tipoSanguineo").value = "0";
 }

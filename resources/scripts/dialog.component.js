@@ -1,4 +1,4 @@
-import { isFormularioAssociadoValido } from "../../modules/associado/associado.page.js";
+import { isFormularioAssociadoValido, limparDadosFormulario } from "../../modules/associado/associado.page.js";
 
 const botaoAnterior = document.querySelectorAll(".botao-anterior");
 const botaoProximo = document.querySelectorAll(".botao-proximo");
@@ -41,6 +41,7 @@ function movimentarEtapa() {
 const botaoCancelar = document.getElementById("botaoCancelar");
 
 botaoCancelar.addEventListener("click", function() {
+    limparDadosFormulario();
     sombreamento.style.display = "none";
     dialog.close();
 });
