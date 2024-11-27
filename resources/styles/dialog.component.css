@@ -13,7 +13,7 @@
 
 #dialog {
     width: 70%;
-    height: 380px;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,6 +34,15 @@
 #dialog form h2 {
     margin-bottom: 60px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#dialog form h2 span {
+    font-size: var(--font-medium);
+    color: var(--ion-color-medium);
 }
 
 #dialog a {
@@ -76,6 +85,7 @@
 
 #dialog .active {
     display: block;
+    margin-top: -30px;
 }
 
 #dialog .etapas .row {

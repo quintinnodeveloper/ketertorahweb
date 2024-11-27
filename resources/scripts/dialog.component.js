@@ -4,6 +4,8 @@ const botaoAnterior = document.querySelectorAll(".botao-anterior");
 const botaoProximo = document.querySelectorAll(".botao-proximo");
 const etapas = document.querySelectorAll(".etapas");
 
+const subtituloCadastroAssociado = document.getElementById("subtituloCadastroAssociado");
+
 let indiceEtapaAtual = 0;
 
 botaoAnterior.forEach( botao => {
@@ -18,7 +20,11 @@ botaoProximo.forEach( botao => {
         if (isFormularioAssociadoValido()) {
             indiceEtapaAtual++;
             movimentarEtapa();
+            if (indiceEtapaAtual === 1) {
+                subtituloCadastroAssociado.textContent = "Endereço";
+            }
         }
+        console.log(indiceEtapaAtual);
     });
 });
 
@@ -52,4 +58,4 @@ export async function fecharDialog() {
 }
 
 // Apresentar sombreamento para testes
-// sombreamento.style.display = "block";
+sombreamento.style.display = "block";
