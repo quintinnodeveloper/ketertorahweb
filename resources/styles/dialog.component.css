@@ -105,6 +105,7 @@
     padding-left: 10px;
     font-size: 18px;
     background: var(--ion-color-light);
+    border: var(--ion-color-light-shade) solid 2px;
 }
 
 #dialog .etapas .row .campos input.invalid,
