@@ -6,6 +6,10 @@
     flex: 20%;
 }
 
+.width30 {
+    flex: 30%;
+}
+
 .width60 {
     flex: 60%;
 }

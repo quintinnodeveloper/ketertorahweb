@@ -31,6 +31,23 @@
     width: 100%;
 }
 
+#dialog form .botao-fechar {
+    display: flex;
+    justify-content: end;
+}
+
+#dialog form img {
+    width: 28px;
+    height: 28px;
+    border: none;
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+
+#dialog form img:hover {
+    transform: rotate(180deg);
+}
+
 #dialog form h2 {
     margin-bottom: 60px;
     text-align: center;

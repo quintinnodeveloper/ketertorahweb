@@ -59,3 +59,7 @@ export async function fecharDialog() {
 
 // Apresentar sombreamento para testes
 sombreamento.style.display = "block";
+
+document.getElementById("iconeFecharDialog").addEventListener("click", function() {
+    fecharDialog();
+});

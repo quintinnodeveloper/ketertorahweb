@@ -96,7 +96,10 @@
 
         <form>
 
-            <!-- <img src="../../resources/images/icons/users.svg"/> -->
+            <div class="botao-fechar">
+                <img id="iconeFecharDialog" src="../../resources/images/icons/circle-x.svg"/>
+            </div>
+
             <h2>
                 Cadastro de Associados
                 <span id="subtituloCadastroAssociado">Dados Básicos</span>
@@ -177,7 +180,7 @@
 
             <div class="etapas">
                 <div class="row">
-                    <div class="campos">
+                    <div class="campos width30">
                         <label>CEP</label>
                         <input id="cepEndereco" type="text" />
                     </div>
@@ -185,9 +188,9 @@
                         <label>Endereço Completo</label>
                         <input id="descricaoEndereco" type="text" />
                     </div>
-                    <div class="campos">
+                    <div class="campos width20">
                         <label>Número</label>
-                        <input id="numeroEndereco" type="text" />
+                        <input id="numeroEndereco" type="number" />
                     </div>
                 </div>
                 <div class="row">
