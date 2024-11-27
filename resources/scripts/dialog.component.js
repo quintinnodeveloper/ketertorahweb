@@ -23,6 +23,12 @@ botaoProximo.forEach( botao => {
             if (indiceEtapaAtual === 1) {
                 subtituloCadastroAssociado.textContent = "Endereço";
             }
+            if (indiceEtapaAtual === 2) {
+                subtituloCadastroAssociado.textContent = "Documentos";
+            }
+            if (indiceEtapaAtual === 3) {
+                subtituloCadastroAssociado.textContent = "Dependentes";
+            }
         }
         console.log(indiceEtapaAtual);
     });
