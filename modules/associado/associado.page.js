@@ -260,6 +260,10 @@ document.getElementById("estadoEndereco").value = "2";
 document.getElementById("emailContato").value = "email.email@email.com.br";
 document.getElementById("telefoneContato").value = "(61) 9-9658-9658";
 
+document.getElementById("carteiraIdentidadeDocumento").value = "24587451";
+document.getElementById("orgaoExpeditorDocumento").value = "SSP-SP";
+document.getElementById("dataExpedicaoDocumento").value = new Date("2000-12-01").toISOString().split('T')[0];
+
 function aplicarMascaraCamposFormulario() {
     document.getElementById("cepEndereco").addEventListener("input", function (event) {
         event.target.value = aplicarMascaraCEP(event.target.value);
