@@ -148,3 +148,34 @@
 #orgaoExpeditorDocumento {
     text-transform: uppercase;
 }
+
+.perfil-usuario {
+    /* border: solid red 1px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.perfil-usuario img {
+    width: 200px !important;
+    height: 200px !important;
+    border: solid 8px var(--ion-color-medium) !important;
+    transform: rotate(0) !important;
+    object-fit: cover;
+}
+
+.perfil-usuario img:hover {
+    background: red !important;
+}
+
+.perfil-usuario .informacoes-usuario {
+    text-align: center;
+}
+
+.perfil-usuario .informacoes-usuario p {
+    color: var(--ion-color-medium);
+    margin-top: -60px;
+}

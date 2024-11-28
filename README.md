@@ -34,6 +34,7 @@
     🔵 feature: Incluir campos no formulário de cadastro de Associados
     🟡 refactor: Ajustes no layout do formulário
     🔵 feature: Implementar utilitário de máscara para CEP
+    🔵 feature: Implementar cadastro de imagem na etapa de Perfil de Usuário
 
 ### Padrão de Versionamento
 
