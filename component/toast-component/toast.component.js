@@ -20,11 +20,11 @@ export function apresentarToastSuccess() {
     }, 3000);
 }
 
-export function apresentarToastDanger(message) {
+export function apresentarToastDanger(mensagem) {
     toast.classList.add("show");
     toast.classList.add("danger");
     barraProgresso.style.width = "0%";
-    mensagemToast.textContent = message;
+    mensagemToast.textContent = mensagem;
     setTimeout(() => {
         barraProgresso.classList.add("danger");
         barraProgresso.style.width = "100%";
@@ -34,10 +34,11 @@ export function apresentarToastDanger(message) {
     }, 3000);
 }
 
-export function apresentarToastWarning() {
+export function apresentarToastWarning(mensagem) {
     toast.classList.add("show");
     toast.classList.add("warning");
     barraProgresso.style.width = "0%";
+    mensagemToast.textContent = mensagem;
     setTimeout(() => {
         barraProgresso.classList.add("warning");
         barraProgresso.style.width = "100%";

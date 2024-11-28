@@ -1,8 +1,8 @@
+import { apresentarToastSuccess, apresentarToastWarning } from "../../component/toast-component/toast.component.js";
+import { fecharDialog, getIndiceEtapaAtual } from "../../resources/scripts/dialog.component.js";
 import { AssociadoModel } from "../model/associado.model.js";
 import { create } from "../services/associado.service.js";
-import { isVerificarDuplicidade, getAssociados } from "../utility/localstorage.utility.js";
-import { fecharDialog, getIndiceEtapaAtual } from "../../resources/scripts/dialog.component.js";
-import { apresentarToastDanger, apresentarToastSuccess } from "../../component/toast-component/toast.component.js";
+import { getAssociados, isVerificarDuplicidade } from "../utility/localstorage.utility.js";
 import { gerarUUID } from "../utility/uuid.utility.js";
 
 const abrirModal = document.getElementById("abrir-modal");
@@ -119,7 +119,7 @@ export function isFormularioAssociadoValido() {
     document.getElementById("cepEndereco").classList.remove("invalid");
 
     switch (getIndiceEtapaAtual()) {
-        case 0:
+        case 0: // INFO: Dados Básicos
             if (tipoPessoaID === 0) {
                 document.getElementById("tipoPessoa").classList.add("invalid");
                 return false;
@@ -140,10 +140,10 @@ export function isFormularioAssociadoValido() {
                 return false;
             }
             break;
-        case 1:
+        case 1: // INFO: Endereços
             if (cepEndereco === "") {
                 document.getElementById("cepEndereco").classList.add("invalid");
-                apresentarToastDanger("Preencha todos os campos obrigatórios!");
+                apresentarToastWarning("Preencha todos os campos obrigatórios!");
                 return false;
             }
             break;
