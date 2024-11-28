@@ -195,10 +195,11 @@
     align-items: center;
     margin-top: 50%;
     /* display: none; */
-    transition: display 4s ease-in;
+    transition: 2s ease-in;
 }
 
 #fotoPerfilUsuarioLabel:hover {
     display: block;
-    background-color: rgba(0, 0, 0, 0.011);
+    background-color: rgba(0, 0, 0, 0.05);
+    filter: blur(20%);
 }
