@@ -52,14 +52,17 @@
 
 ### Padrão de codificação
 
-TODO: Para tarefas futuras ou melhorias.
-FIXME: Para problemas ou falhas a serem corrigidos.
-BUG: Para erros específicos ou falhas conhecidas.
-HACK: Para soluções temporárias ou improvisadas.
-OPTIMIZE: Para indicar necessidade de otimização de código.
-DEPRECATED: Para código obsoleto ou em desuso.
-REVIEW: Para áreas que precisam ser revisadas.
-WARN: Para indicar possíveis riscos ou comportamentos indesejáveis.
-INFO: Para adicionar informações ou explicações sobre o código.
-IN_PROGRESS: Para indicar que algo está em andamento.
-UNDONE: Para indicar que algo não foi feito ou foi abandonado.
+| **Código**     | **Descrição**                                                |
+|----------------|--------------------------------------------------------------|
+| TODO           | Para tarefas futuras ou melhorias.                           |
+| FIXME          | Para problemas ou falhas a serem corrigidos.                |
+| BUG            | Para erros específicos ou falhas conhecidas.                 |
+| HACK           | Para soluções temporárias ou improvisadas.                   |
+| OPTIMIZE       | Para indicar necessidade de otimização de código.            |
+| DEPRECATED     | Para código obsoleto ou em desuso.                           |
+| REVIEW         | Para áreas que precisam ser revisadas.                       |
+| WARN           | Para indicar possíveis riscos ou comportamentos indesejáveis.|
+| INFO           | Para adicionar informações ou explicações sobre o código.    |
+| IN_PROGRESS    | Para indicar que algo está em andamento.                    |
+| UNDONE         | Para indicar que algo não foi feito ou foi abandonado.       |
+
