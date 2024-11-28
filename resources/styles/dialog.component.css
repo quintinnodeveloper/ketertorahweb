@@ -164,10 +164,6 @@
     object-fit: cover;
 }
 
-.perfil-usuario img:hover {
-    background: red !important;
-}
-
 .perfil-usuario .informacoes-usuario {
     text-align: center;
 }
@@ -186,4 +182,23 @@
     height: 200px;
     border-radius: 50%;
     cursor: pointer;
+}
+
+#fotoPerfilUsuarioLabel .hover-text {
+    width: 60%;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50%;
+    /* display: none; */
+    transition: display 4s ease-in;
+}
+
+#fotoPerfilUsuarioLabel:hover {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.011);
 }
