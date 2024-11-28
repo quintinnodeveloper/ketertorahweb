@@ -114,6 +114,7 @@ export async function fecharDialog() {
 
 document.getElementById("iconeFecharDialog").addEventListener("click", function () {
     fecharDialog();
+    limparDadosFormulario();
 });
 
 export function getIndiceEtapaAtual() {
