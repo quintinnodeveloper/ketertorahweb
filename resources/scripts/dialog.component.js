@@ -85,6 +85,7 @@ botaoCancelar.addEventListener("click", function () {
 export async function fecharDialog() {
     sombreamento.style.display = "none";
     dialog.close();
+    limparDadosFormulario();
 }
 
 // Apresentar sombreamento para testes

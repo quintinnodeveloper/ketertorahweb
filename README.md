@@ -33,6 +33,7 @@
     🔵 feature: Implementar validação e ordenação dos dados dos associados
     🔵 feature: Incluir campos no formulário de cadastro de Associados
     🟡 refactor: Ajustes no layout do formulário
+    🔵 feature: Implementar utilitário de máscara para CEP
 
 ### Padrão de Versionamento
 
