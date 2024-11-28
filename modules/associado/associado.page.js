@@ -1,8 +1,9 @@
 import { AssociadoModel } from "../model/associado.model.js";
 import { create } from "../services/associado.service.js";
 import { isVerificarDuplicidade, getAssociados } from "../utility/localstorage.utility.js";
-import { fecharDialog } from "../../resources/scripts/dialog.component.js";
+import { fecharDialog, getIndiceEtapaAtual } from "../../resources/scripts/dialog.component.js";
 import { apresentarToastSuccess } from "../../component/toast-component/toast.component.js";
+import { gerarUUID } from "../utility/uuid.utility.js";
 
 const abrirModal = document.getElementById("abrir-modal");
 const dialog = document.getElementById("dialog");
@@ -50,12 +51,12 @@ function exibirTabela() {
     let associadoArray = getAssociados();
 
     associadoArray.sort((a, b) => a.nomeCompleto.localeCompare(b.nomeCompleto));
-    
+
     const tbody = document.querySelector("table tbody");
 
     tbody.innerHTML = "";
 
-    associadoArray.forEach( (associado, index) => {
+    associadoArray.forEach((associado, index) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
         <td>${index + 1}</td>
@@ -110,7 +111,7 @@ export function isFormularioAssociadoValido() {
     const nomeCompleto = document.getElementById("nomeCompleto").value.trim();
     const dataNascimento = document.getElementById("dataNascimento").value;
     const paisNascimentoID = Number(document.getElementById("paisNascimento").value);
-    const cepEndereco = document.getElementById("cepEndereco").trim();
+    const cepEndereco = document.getElementById("cepEndereco").value.trim();
 
     document.getElementById("tipoPessoa").classList.remove("invalid");
     document.getElementById("nomeCompleto").classList.remove("invalid");
@@ -118,29 +119,36 @@ export function isFormularioAssociadoValido() {
     document.getElementById("paisNascimento").classList.remove("invalid");
     document.getElementById("cepEndereco").classList.remove("invalid");
 
-    if (tipoPessoaID === 0) {
-        document.getElementById("tipoPessoa").classList.add("invalid");
-        return false;
-    }
-
-    if (nomeCompleto === "") {
-        document.getElementById("nomeCompleto").classList.add("invalid");
-        return false;
-    }
-
-    if (dataNascimento === "") {
-        document.getElementById("dataNascimento").classList.add("invalid");
-        return false;
-    }
-
-    if (paisNascimentoID === 0) {
-        document.getElementById("paisNascimento").classList.add("invalid");
-        return false;
-    }
-
-    if (cepEndereco === "") {
-        document.getElementById("cepEndereco").classList.add("invalid");
-        return false;
+    switch (getIndiceEtapaAtual()) {
+        case 0:
+            if (tipoPessoaID === 0) {
+                document.getElementById("tipoPessoa").classList.add("invalid");
+                return false;
+            }
+        
+            if (nomeCompleto === "") {
+                document.getElementById("nomeCompleto").classList.add("invalid");
+                return false;
+            }
+        
+            if (dataNascimento === "") {
+                document.getElementById("dataNascimento").classList.add("invalid");
+                return false;
+            }
+        
+            if (paisNascimentoID === 0) {
+                document.getElementById("paisNascimento").classList.add("invalid");
+                return false;
+            }
+            break;
+        case 1:
+            if (cepEndereco === "") {
+                document.getElementById("cepEndereco").classList.add("invalid");
+                return false;
+            }
+            break;
+        default:
+            break;
     }
 
     return true;
@@ -155,3 +163,12 @@ export function limparDadosFormulario() {
     document.getElementById("estadoCivil").value = "0";
     document.getElementById("tipoSanguineo").value = "0";
 }
+
+// FIXME: Modo teste de eapas
+document.getElementById("tipoPessoa").value = "1";
+document.getElementById("nomeCompleto").value = gerarUUID();
+document.getElementById("dataNascimento").value = new Date("2024-01-01").toISOString().split('T')[0];
+document.getElementById("paisNascimento").value = "1";
+document.getElementById("corRaca").value = "3";
+document.getElementById("estadoCivil").value = "2";
+document.getElementById("tipoSanguineo").value = "4";

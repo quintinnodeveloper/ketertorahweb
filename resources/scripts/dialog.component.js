@@ -94,4 +94,8 @@ document.getElementById("iconeFecharDialog").addEventListener("click", function 
     fecharDialog();
 });
 
+export function getIndiceEtapaAtual() {
+    return indiceEtapaAtual;
+}
+
 init();
