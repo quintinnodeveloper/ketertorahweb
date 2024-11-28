@@ -275,9 +275,10 @@ document.querySelector("#fotoPerfilUsuario").addEventListener("change", function
     const file = event.target.files[0];
     if (file) {
         const imageUrl = URL.createObjectURL(file);
-        console.log(imageUrl);
         const imgElement = document.querySelector("#imagemUsuarioPerfil");
+        const fotoPerfilUsuarioLabel = document.getElementById("fotoPerfilUsuarioLabel");
         imgElement.src = imageUrl;
+        fotoPerfilUsuarioLabel.style.backgroundImage = `url(${imageUrl})`;
     } else {
         throw new Error("Erro ao tentar carregar a imagem!");
     }
