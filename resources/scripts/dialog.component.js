@@ -14,8 +14,11 @@ function init() {
 
 botaoAnterior.forEach(botao => {
     botao.addEventListener("click", function () {
-        indiceEtapaAtual--;
-        movimentarEtapa();
+        if (isFormularioAssociadoValido()) {
+            indiceEtapaAtual--;
+            movimentarEtapa();
+            definirSubtituloCadastroAssociado();
+        }
     });
 });
 
