@@ -79,8 +79,6 @@
 }
 
 #dialog .botoes {
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr); */
     display: flex;
     gap: 1.5rem;
     margin-top: 20px;
@@ -106,7 +104,6 @@
 }
 
 #dialog .etapas .row {
-    /* border: red solid 1px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -178,4 +175,8 @@
 .perfil-usuario .informacoes-usuario p {
     color: var(--ion-color-medium);
     margin-top: -60px;
+}
+
+#fotoPerfilUsuario {
+    border: red dashed 2px;
 }

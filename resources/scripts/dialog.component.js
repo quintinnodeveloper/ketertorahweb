@@ -29,7 +29,6 @@ botaoProximo.forEach(botao => {
             movimentarEtapa();
             definirSubtituloCadastroAssociado();
         }
-        console.log(indiceEtapaAtual);
     });
 });
 

@@ -35,7 +35,6 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
         if (!isVerificarDuplicidade(associado.nomeCompleto)) {
             create(associado);
             apresentarToastSuccess();
-            console.log("Associado cadastrado com sucesso!");
             fecharDialog();
             exibirTabela();
             limparDadosFormulario();
@@ -44,7 +43,6 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
         }
 
     } catch (error) {
-        console.log("Falha ao tentar cadastrar o Associado!");
         console.error(error);
     }
 
@@ -272,5 +270,17 @@ function aplicarMascaraCamposFormulario() {
         event.target.value = aplicarMascaraTelefone(event.target);
     });
 }
+
+document.querySelector("#fotoPerfilUsuario").addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const imageUrl = URL.createObjectURL(file);
+        console.log(imageUrl);
+        const imgElement = document.querySelector("#imagemUsuarioPerfil");
+        imgElement.src = imageUrl;
+    } else {
+        throw new Error("Erro ao tentar carregar a imagem!");
+    }
+});
 
 init();
