@@ -204,20 +204,20 @@ export function limparDadosFormulario() {
     document.getElementById("tipoSanguineo").value = "0";
 }
 
-// FIXME: Modo teste de eapas
-document.getElementById("tipoPessoa").value = "1";
-document.getElementById("nomeCompleto").value = gerarUUID();
-document.getElementById("dataNascimento").value = new Date("2024-01-01").toISOString().split('T')[0];
-document.getElementById("paisNascimento").value = "1";
-document.getElementById("corRaca").value = "3";
-document.getElementById("estadoCivil").value = "2";
-document.getElementById("tipoSanguineo").value = "4";
-document.getElementById("cepEndereco").value = "71.880-631";
-document.getElementById("descricaoEndereco").value = "Rua Neromi José Scrins";
-document.getElementById("numeroEndereco").value = "897";
-document.getElementById("cidadeEndereco").value = "1";
-document.getElementById("bairroEndereco").value = "1";
-document.getElementById("estadoEndereco").value = "2";
+// FIXME: Modo teste de epapas
+// document.getElementById("tipoPessoa").value = "1";
+// document.getElementById("nomeCompleto").value = gerarUUID();
+// document.getElementById("dataNascimento").value = new Date("2024-01-01").toISOString().split('T')[0];
+// document.getElementById("paisNascimento").value = "1";
+// document.getElementById("corRaca").value = "3";
+// document.getElementById("estadoCivil").value = "2";
+// document.getElementById("tipoSanguineo").value = "4";
+// document.getElementById("cepEndereco").value = "71.880-631";
+// document.getElementById("descricaoEndereco").value = "Rua Neromi José Scrins";
+// document.getElementById("numeroEndereco").value = "897";
+// document.getElementById("cidadeEndereco").value = "1";
+// document.getElementById("bairroEndereco").value = "1";
+// document.getElementById("estadoEndereco").value = "2";
 
 function aplicarMascaraCamposFormulario() {
     document.getElementById("cepEndereco").addEventListener("input", function (event) {
