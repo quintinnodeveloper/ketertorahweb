@@ -1,5 +1,5 @@
 import { apresentarToastDanger, apresentarToastSuccess } from "../../component/toast-component/toast.component.js";
-import { fecharDialog, getIndiceEtapaAtual } from "../../resources/scripts/dialog.component.js";
+import { fecharDialog, getIndiceEtapaAtual, zerarIndiceEtapaAtual } from "../../resources/scripts/dialog.component.js";
 import { AssociadoModel } from "../model/associado.model.js";
 import { create } from "../services/associado.service.js";
 import { getAssociados, isVerificarDuplicidade } from "../utility/localstorage.utility.js";
@@ -20,6 +20,8 @@ abrirModal.addEventListener("click", function () {
 });
 
 document.getElementById("botaoCadastrar").addEventListener("click", function () {
+
+    zerarIndiceEtapaAtual();
 
     try {
 

@@ -121,4 +121,10 @@ export function getIndiceEtapaAtual() {
     return indiceEtapaAtual;
 }
 
+export function zerarIndiceEtapaAtual() {
+    indiceEtapaAtual = 0;
+    movimentarEtapa();
+    definirSubtituloCadastroAssociado();
+}
+
 init();
