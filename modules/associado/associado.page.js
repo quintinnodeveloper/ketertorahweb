@@ -17,14 +17,14 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
 
     try {
 
-        const codigo = crypto.randomUUID();;
+        // const codigo = crypto.randomUUID();;
         const tipoPessoaID = document.getElementById("tipoPessoa").value;
         const nomeCompleto = document.getElementById("nomeCompleto").value;
         const dataNascimento = document.getElementById("tipoPessoa").value;
         const paisNascimentoID = document.getElementById("tipoPessoa").value;
 
         const associado = new AssociadoModel(
-            codigo, tipoPessoaID, nomeCompleto, dataNascimento, paisNascimentoID
+            Math.random(), tipoPessoaID, nomeCompleto, dataNascimento, paisNascimentoID
         );
 
         if (!isVerificarDuplicidade(associado.nomeCompleto)) {
@@ -33,6 +33,7 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
             console.log("Associado cadastrado com sucesso!");
             fecharDialog();
             exibirTabela();
+            limparDadosFormulario();
         } else {
             throw new Error("Associado já cadastrado no sistema!");
         }
@@ -109,11 +110,13 @@ export function isFormularioAssociadoValido() {
     const nomeCompleto = document.getElementById("nomeCompleto").value.trim();
     const dataNascimento = document.getElementById("dataNascimento").value;
     const paisNascimentoID = Number(document.getElementById("paisNascimento").value);
+    const cepEndereco = document.getElementById("cepEndereco").trim();
 
     document.getElementById("tipoPessoa").classList.remove("invalid");
     document.getElementById("nomeCompleto").classList.remove("invalid");
     document.getElementById("dataNascimento").classList.remove("invalid");
     document.getElementById("paisNascimento").classList.remove("invalid");
+    document.getElementById("cepEndereco").classList.remove("invalid");
 
     if (tipoPessoaID === 0) {
         document.getElementById("tipoPessoa").classList.add("invalid");
@@ -132,6 +135,11 @@ export function isFormularioAssociadoValido() {
 
     if (paisNascimentoID === 0) {
         document.getElementById("paisNascimento").classList.add("invalid");
+        return false;
+    }
+
+    if (cepEndereco === "") {
+        document.getElementById("cepEndereco").classList.add("invalid");
         return false;
     }
 

@@ -8,36 +8,60 @@ const subtituloCadastroAssociado = document.getElementById("subtituloCadastroAss
 
 let indiceEtapaAtual = 0;
 
-botaoAnterior.forEach( botao => {
-    botao.addEventListener("click", function() {
+function init() {
+    definirSubtituloCadastroAssociado();
+}
+
+botaoAnterior.forEach(botao => {
+    botao.addEventListener("click", function () {
         indiceEtapaAtual--;
         movimentarEtapa();
     });
 });
 
-botaoProximo.forEach( botao => {
-    botao.addEventListener("click", function() {
+botaoProximo.forEach(botao => {
+    botao.addEventListener("click", function () {
         if (isFormularioAssociadoValido()) {
             indiceEtapaAtual++;
             movimentarEtapa();
-            if (indiceEtapaAtual === 1) {
-                subtituloCadastroAssociado.textContent = "Endereço";
-            }
-            if (indiceEtapaAtual === 2) {
-                subtituloCadastroAssociado.textContent = "Documentos";
-            }
-            if (indiceEtapaAtual === 3) {
-                subtituloCadastroAssociado.textContent = "Dependentes";
-            }
+            definirSubtituloCadastroAssociado();
         }
         console.log(indiceEtapaAtual);
     });
 });
 
+function definirSubtituloCadastroAssociado() {
+    switch (indiceEtapaAtual) {
+        case 0:
+            subtituloCadastroAssociado.textContent = "Dados Básicos";
+            break;
+        case 1:
+            subtituloCadastroAssociado.textContent = "Endereço";
+            break;
+        case 2:
+            subtituloCadastroAssociado.textContent = "Contatos";
+            break;
+        case 3:
+            subtituloCadastroAssociado.textContent = "Documentos";
+            break;
+        case 4:
+            subtituloCadastroAssociado.textContent = "Dependentes";
+            break;
+        case 5:
+            subtituloCadastroAssociado.textContent = "Arquivos";
+            break;
+        case 6:
+            subtituloCadastroAssociado.textContent = "Perfil de Usuário";
+            break;
+        default:
+            break;
+    }
+}
+
 function movimentarEtapa() {
     etapas.forEach(element => {
         element.classList.contains("active") &&
-        element.classList.remove("active")
+            element.classList.remove("active")
     });
     etapas[indiceEtapaAtual].classList.add("active");
 }
@@ -52,7 +76,7 @@ function movimentarEtapa() {
 
 const botaoCancelar = document.getElementById("botaoCancelar");
 
-botaoCancelar.addEventListener("click", function() {
+botaoCancelar.addEventListener("click", function () {
     limparDadosFormulario();
     sombreamento.style.display = "none";
     dialog.close();
@@ -64,8 +88,10 @@ export async function fecharDialog() {
 }
 
 // Apresentar sombreamento para testes
-sombreamento.style.display = "block";
+// sombreamento.style.display = "block";
 
-document.getElementById("iconeFecharDialog").addEventListener("click", function() {
+document.getElementById("iconeFecharDialog").addEventListener("click", function () {
     fecharDialog();
 });
+
+init();
