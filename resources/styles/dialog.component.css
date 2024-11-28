@@ -144,3 +144,7 @@
 #dialog .etapas .row .campos select:focus {
     outline: none;
 }
+
+#orgaoExpeditorDocumento {
+    text-transform: uppercase;
+}

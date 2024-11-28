@@ -123,6 +123,9 @@ export function isFormularioAssociadoValido() {
     const estadoEndereco = Number(document.getElementById("estadoEndereco").value);
     const emailContato = document.getElementById("emailContato").value.trim();
     const telefoneContato = document.getElementById("telefoneContato").value;
+    const carteiraIdentidadeDocumento = document.getElementById("carteiraIdentidadeDocumento").value;
+    const orgaoExpeditorDocumento = document.getElementById("orgaoExpeditorDocumento").value;
+    const dataExpedicaoDocumento = document.getElementById("dataExpedicaoDocumento").value;
 
     document.getElementById("tipoPessoa").classList.remove("invalid");
     document.getElementById("nomeCompleto").classList.remove("invalid");
@@ -136,6 +139,9 @@ export function isFormularioAssociadoValido() {
     document.getElementById("estadoEndereco").classList.remove("invalid");
     document.getElementById("emailContato").classList.remove("invalid");
     document.getElementById("telefoneContato").classList.remove("invalid");
+    document.getElementById("carteiraIdentidadeDocumento").classList.remove("invalid");
+    document.getElementById("orgaoExpeditorDocumento").classList.remove("invalid");
+    document.getElementById("dataExpedicaoDocumento").classList.remove("invalid");
 
     switch (getIndiceEtapaAtual()) {
         case 0: // INFO: Dados Básicos
@@ -199,6 +205,23 @@ export function isFormularioAssociadoValido() {
             }
             if (telefoneContato === "") {
                 document.getElementById("telefoneContato").classList.add("invalid");
+                apresentarToastDanger("Preencha todos os campos obrigatórios!");
+                return false;
+            }
+            break;
+        case 3: // INFO: Documentos
+            if (carteiraIdentidadeDocumento === "") {
+                document.getElementById("carteiraIdentidadeDocumento").classList.add("invalid");
+                apresentarToastDanger("Preencha todos os campos obrigatórios!");
+                return false;
+            }
+            if (orgaoExpeditorDocumento === "") {
+                document.getElementById("orgaoExpeditorDocumento").classList.add("invalid");
+                apresentarToastDanger("Preencha todos os campos obrigatórios!");
+                return false;
+            }
+            if (dataExpedicaoDocumento === "") {
+                document.getElementById("dataExpedicaoDocumento").classList.add("invalid");
                 apresentarToastDanger("Preencha todos os campos obrigatórios!");
                 return false;
             }
