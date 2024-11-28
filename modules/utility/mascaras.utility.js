@@ -11,10 +11,10 @@ export function aplicarMascaraCEP(cep) {
 export function aplicarMascaraTelefone(telefoneParameter) {
     let telefone = telefoneParameter.value.replace(/\D/g, '');
     if (telefone.length <= 10) {
-        telefone = telefone.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+        telefone = telefone.replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, '($1) $2-$3-$4');
     } 
     else {
-        telefone = telefone.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+        telefone = telefone.replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, '($1) $2-$3-$4');
     }
     telefoneParameter.value = telefone;
     console.log(telefone);

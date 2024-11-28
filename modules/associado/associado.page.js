@@ -234,6 +234,8 @@ document.getElementById("numeroEndereco").value = "897";
 document.getElementById("cidadeEndereco").value = "1";
 document.getElementById("bairroEndereco").value = "1";
 document.getElementById("estadoEndereco").value = "2";
+document.getElementById("emailContato").value = "email.email@email.com.br";
+document.getElementById("telefoneContato").value = "(61) 9-9658-9658";
 
 function aplicarMascaraCamposFormulario() {
     document.getElementById("cepEndereco").addEventListener("input", function (event) {
