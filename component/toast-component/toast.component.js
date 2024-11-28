@@ -20,10 +20,11 @@ export function apresentarToastSuccess() {
     }, 3000);
 }
 
-export function apresentarToastDanger() {
+export function apresentarToastDanger(message) {
     toast.classList.add("show");
     toast.classList.add("danger");
     barraProgresso.style.width = "0%";
+    mensagemToast.textContent = message;
     setTimeout(() => {
         barraProgresso.classList.add("danger");
         barraProgresso.style.width = "100%";

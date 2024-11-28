@@ -2,7 +2,7 @@ import { AssociadoModel } from "../model/associado.model.js";
 import { create } from "../services/associado.service.js";
 import { isVerificarDuplicidade, getAssociados } from "../utility/localstorage.utility.js";
 import { fecharDialog, getIndiceEtapaAtual } from "../../resources/scripts/dialog.component.js";
-import { apresentarToastSuccess } from "../../component/toast-component/toast.component.js";
+import { apresentarToastDanger, apresentarToastSuccess } from "../../component/toast-component/toast.component.js";
 import { gerarUUID } from "../utility/uuid.utility.js";
 
 const abrirModal = document.getElementById("abrir-modal");
@@ -18,7 +18,6 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
 
     try {
 
-        // const codigo = crypto.randomUUID();;
         const tipoPessoaID = document.getElementById("tipoPessoa").value;
         const nomeCompleto = document.getElementById("nomeCompleto").value;
         const dataNascimento = document.getElementById("tipoPessoa").value;
@@ -144,6 +143,7 @@ export function isFormularioAssociadoValido() {
         case 1:
             if (cepEndereco === "") {
                 document.getElementById("cepEndereco").classList.add("invalid");
+                apresentarToastDanger("Preencha todos os campos obrigatórios!");
                 return false;
             }
             break;
