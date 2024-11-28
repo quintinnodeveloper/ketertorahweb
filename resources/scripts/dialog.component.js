@@ -34,6 +34,31 @@ botaoProximo.forEach(botao => {
 });
 
 function definirSubtituloCadastroAssociado() {
+    // switch (indiceEtapaAtual) {
+    //     case 0:
+    //         subtituloCadastroAssociado.textContent = "Dados Básicos";
+    //         break;
+    //     case 1:
+    //         subtituloCadastroAssociado.textContent = "Endereço";
+    //         break;
+    //     case 2:
+    //         subtituloCadastroAssociado.textContent = "Contatos";
+    //         break;
+    //     case 3:
+    //         subtituloCadastroAssociado.textContent = "Documentos";
+    //         break;
+    //     case 4:
+    //         subtituloCadastroAssociado.textContent = "Dependentes";
+    //         break;
+    //     case 5:
+    //         subtituloCadastroAssociado.textContent = "Arquivos";
+    //         break;
+    //     case 6:
+    //         subtituloCadastroAssociado.textContent = "Perfil de Usuário";
+    //         break;
+    //     default:
+    //         break;
+    // }
     switch (indiceEtapaAtual) {
         case 0:
             subtituloCadastroAssociado.textContent = "Dados Básicos";
@@ -48,12 +73,6 @@ function definirSubtituloCadastroAssociado() {
             subtituloCadastroAssociado.textContent = "Documentos";
             break;
         case 4:
-            subtituloCadastroAssociado.textContent = "Dependentes";
-            break;
-        case 5:
-            subtituloCadastroAssociado.textContent = "Arquivos";
-            break;
-        case 6:
             subtituloCadastroAssociado.textContent = "Perfil de Usuário";
             break;
         default:

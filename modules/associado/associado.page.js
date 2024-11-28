@@ -3,7 +3,7 @@ import { fecharDialog, getIndiceEtapaAtual } from "../../resources/scripts/dialo
 import { AssociadoModel } from "../model/associado.model.js";
 import { create } from "../services/associado.service.js";
 import { getAssociados, isVerificarDuplicidade } from "../utility/localstorage.utility.js";
-import { aplicarMascaraCEP } from "../utility/mascaras.utility.js";
+import { aplicarMascaraCEP, aplicarMascaraTelefone } from "../utility/mascaras.utility.js";
 import { gerarUUID } from "../utility/uuid.utility.js";
 
 const abrirModal = document.getElementById("abrir-modal");
@@ -121,6 +121,8 @@ export function isFormularioAssociadoValido() {
     const cidadeEndereco = Number(document.getElementById("cidadeEndereco").value);
     const bairroEndereco = Number(document.getElementById("bairroEndereco").value);
     const estadoEndereco = Number(document.getElementById("estadoEndereco").value);
+    const emailContato = document.getElementById("emailContato").value.trim();
+    const telefoneContato = document.getElementById("telefoneContato").value;
 
     document.getElementById("tipoPessoa").classList.remove("invalid");
     document.getElementById("nomeCompleto").classList.remove("invalid");
@@ -132,6 +134,8 @@ export function isFormularioAssociadoValido() {
     document.getElementById("cidadeEndereco").classList.remove("invalid");
     document.getElementById("bairroEndereco").classList.remove("invalid");
     document.getElementById("estadoEndereco").classList.remove("invalid");
+    document.getElementById("emailContato").classList.remove("invalid");
+    document.getElementById("telefoneContato").classList.remove("invalid");
 
     switch (getIndiceEtapaAtual()) {
         case 0: // INFO: Dados Básicos
@@ -187,6 +191,18 @@ export function isFormularioAssociadoValido() {
                 return false;
             }
             break;
+        case 2: // INFO: Contatos
+            if (emailContato === "") {
+                document.getElementById("emailContato").classList.add("invalid");
+                apresentarToastDanger("Preencha todos os campos obrigatórios!");
+                return false;
+            }
+            if (telefoneContato === "") {
+                document.getElementById("telefoneContato").classList.add("invalid");
+                apresentarToastDanger("Preencha todos os campos obrigatórios!");
+                return false;
+            }
+            break;
         default:
             break;
     }
@@ -222,6 +238,9 @@ document.getElementById("estadoEndereco").value = "2";
 function aplicarMascaraCamposFormulario() {
     document.getElementById("cepEndereco").addEventListener("input", function (event) {
         event.target.value = aplicarMascaraCEP(event.target.value);
+    });
+    document.getElementById("telefoneContato").addEventListener("input", function (event) {
+        event.target.value = aplicarMascaraTelefone(event.target);
     });
 }
 
