@@ -3,7 +3,7 @@ export class AssociadoModel {
     constructor(codigo, tipoPessoaID, nomeCompleto, dataNascimento, paisNascimentoID, corRacaID, tipoSanguineoID, estadoCivilID,
         cepEndereco, descricaoEndereco, numeroEndereco, cidadeEnderecoID, bairroEnderecoID, estadoEnderecoID,
         emailContato, telefoneContato,
-        carteiraIdentidadeDocumento, orgaoExpeditorDocumento, dataExpedicaoDocumento
+        carteiraIdentidadeDocumento, orgaoExpeditorDocumento, dataExpedicaoDocumento, imagemPerfil
     ) {
         this.codigo = codigo;
         this.tipoPessoaID = tipoPessoaID;
@@ -24,6 +24,7 @@ export class AssociadoModel {
         this.carteiraIdentidadeDocumento = carteiraIdentidadeDocumento;
         this.orgaoExpeditorDocumento = orgaoExpeditorDocumento;
         this.dataExpedicaoDocumento = dataExpedicaoDocumento;
+        this.imagemPerfil = imagemPerfil;
 
     }
 

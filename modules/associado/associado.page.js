@@ -39,10 +39,10 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
         const cidadeEnderecoID = Number(document.getElementById("cidadeEndereco").value);
         const bairroEnderecoID = Number(document.getElementById("bairroEndereco").value);
         const estadoEnderecoID = Number(document.getElementById("estadoEndereco").value);
-        
+
         const emailContato = document.getElementById("emailContato").value.trim();
         const telefoneContato = document.getElementById("telefoneContato").value;
-        
+
         const carteiraIdentidadeDocumento = document.getElementById("carteiraIdentidadeDocumento").value;
         const orgaoExpeditorDocumento = document.getElementById("orgaoExpeditorDocumento").value;
         const dataExpedicaoDocumento = document.getElementById("dataExpedicaoDocumento").value;
@@ -53,6 +53,21 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
             emailContato, telefoneContato,
             carteiraIdentidadeDocumento, orgaoExpeditorDocumento, dataExpedicaoDocumento
         );
+
+        const file = document.getElementById("fotoPerfilUsuario").files[0]; 
+
+        if (file) {
+            try {
+                const base64Image = lerImagem(file);
+                associado.imagemPerfil = base64Image;
+            } catch (error) {
+                console.error("Erro ao carregar imagem:", error);
+            }
+        } else {
+            console.log("Nenhuma imagem foi selecionada.");
+        }
+
+        console.log("ASSOCIADO: ", associado);
 
         if (!isVerificarDuplicidade(associado.nomeCompleto)) {
             create(associado);
@@ -305,5 +320,18 @@ document.querySelector("#fotoPerfilUsuario").addEventListener("change", function
         throw new Error("Erro ao tentar carregar a imagem!");
     }
 });
+
+function lerImagem(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = function () {
+            resolve(reader.result);
+        };
+        reader.onerror = function () {
+            reject("Erro ao tentar ler o arquivo.");
+        };
+        reader.readAsDataURL(file);
+    });
+}
 
 init();
