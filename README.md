@@ -36,6 +36,7 @@
     🔵 feature: Implementar utilitário de máscara para CEP
     🔵 feature: Implementar cadastro de imagem na etapa de Perfil de Usuário
     🟠 bugfix: Sistema não zera o índice de etapas causando transtorno ao usuário ao cadastrar vários associados em sequência
+    🔵 feature: Persistir todos os dados no localstorage
 
 ### Padrão de Versionamento
 

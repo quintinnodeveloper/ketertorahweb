@@ -25,13 +25,33 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
 
     try {
 
-        const tipoPessoaID = document.getElementById("tipoPessoa").value;
-        const nomeCompleto = document.getElementById("nomeCompleto").value;
-        const dataNascimento = document.getElementById("tipoPessoa").value;
-        const paisNascimentoID = document.getElementById("tipoPessoa").value;
+        const tipoPessoaID = Number(document.getElementById("tipoPessoa").value);
+        const nomeCompleto = document.getElementById("nomeCompleto").value.trim();
+        const dataNascimento = document.getElementById("dataNascimento").value;
+        const paisNascimentoID = Number(document.getElementById("paisNascimento").value);
+        const corRacaID = Number(document.getElementById("corRaca").value);
+        const tipoSanguineoID = Number(document.getElementById("tipoSanguineo").value);
+        const estadoCivilID = Number(document.getElementById("estadoCivil").value);
+
+        const cepEndereco = document.getElementById("cepEndereco").value.trim();
+        const descricaoEndereco = document.getElementById("descricaoEndereco").value;
+        const numeroEndereco = document.getElementById("numeroEndereco").value;
+        const cidadeEnderecoID = Number(document.getElementById("cidadeEndereco").value);
+        const bairroEnderecoID = Number(document.getElementById("bairroEndereco").value);
+        const estadoEnderecoID = Number(document.getElementById("estadoEndereco").value);
+        
+        const emailContato = document.getElementById("emailContato").value.trim();
+        const telefoneContato = document.getElementById("telefoneContato").value;
+        
+        const carteiraIdentidadeDocumento = document.getElementById("carteiraIdentidadeDocumento").value;
+        const orgaoExpeditorDocumento = document.getElementById("orgaoExpeditorDocumento").value;
+        const dataExpedicaoDocumento = document.getElementById("dataExpedicaoDocumento").value;
 
         const associado = new AssociadoModel(
-            Math.random(), tipoPessoaID, nomeCompleto, dataNascimento, paisNascimentoID
+            Math.random(), tipoPessoaID, nomeCompleto, dataNascimento, paisNascimentoID, corRacaID, tipoSanguineoID, estadoCivilID,
+            cepEndereco, descricaoEndereco, numeroEndereco, cidadeEnderecoID, bairroEnderecoID, estadoEnderecoID,
+            emailContato, telefoneContato,
+            carteiraIdentidadeDocumento, orgaoExpeditorDocumento, dataExpedicaoDocumento
         );
 
         if (!isVerificarDuplicidade(associado.nomeCompleto)) {
