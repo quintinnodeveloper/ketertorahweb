@@ -27,6 +27,7 @@ nav .dados {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    cursor: pointer;
 }
 
 nav .dados .nome-funcao {
@@ -40,4 +41,36 @@ nav .dados .nome-funcao p {
 nav .dados .nome-funcao span {
     color: var(--ion-color-medium);
     font-size: var(--font-small);
+}
+
+nav .dados .menu-preferencia-usuario {
+    width: 240px;
+    position: absolute;
+    top: 120px;
+    background: white;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+nav .dados .menu-preferencia-usuario.active {
+    display: flex;
+}
+
+nav .dados .menu-preferencia-usuario a:hover {
+    font-weight: bold;
+}
+
+nav .dados .menu-preferencia-usuario::before {
+    content: "";
+    position: absolute;
+    border: 10px solid;
+    top: -20px;
+    left: 200px;
+    border-color: transparent transparent white transparent;
 }

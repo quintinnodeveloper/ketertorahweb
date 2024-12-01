@@ -38,6 +38,10 @@
     🟠 bugfix: Sistema não zera o índice de etapas causando transtorno ao usuário ao cadastrar vários associados em sequência
     🔵 feature: Persistir todos os dados no localstorage
 
+> KETER2024120201130149TORAH
+
+    🔵 feature: Implementar submenu de preferências do usuário
+
 ### Padrão de Versionamento
 
 🚀 init: 
