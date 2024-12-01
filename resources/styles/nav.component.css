@@ -4,6 +4,12 @@ nav {
     align-items: center;
     padding: 20px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--ion-color-light);
+    z-index: 1000;
 }
 
 nav .logomarca h1 {
