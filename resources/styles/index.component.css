@@ -6,7 +6,8 @@
 
 body {
     /* font-family: "Questrial"; */
-    font-family: "SpaceGrotesk";
+    /* font-family: "SpaceGrotesk"; */
+    font-family: "Parkinsans";
     font-size: var(--font-medium);
     /* transition: all 600ms ease-in-out; */
 }
