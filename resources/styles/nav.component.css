@@ -12,9 +12,10 @@ nav {
     z-index: 1000;
 }
 
-nav .logomarca h1 {
+nav .logomarca a {
     font-family: "Audiowide";
     font-size: var(--font-large);
+    font-weight: bold;
 }
 
 nav .menus {

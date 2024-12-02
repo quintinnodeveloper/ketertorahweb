@@ -102,10 +102,12 @@ main .card .card-header .filtros .campo-pesquisar input {
     font-size: var(--font-small);
     padding-left: 50px;
     border: var(--ion-color-light-shade) solid 2px;
+    transition: all 400ms ease;
 }
 
 main .card .card-header .filtros .campo-pesquisar input:focus {
     outline: none;
+    width: 500px;
 }
 
 main .card .card-header .informativo p {
