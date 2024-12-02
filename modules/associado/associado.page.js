@@ -334,4 +334,8 @@ function lerImagem(file) {
     });
 }
 
+document.getElementById("iconeFecharPesquisa").addEventListener("click", function() {
+    document.getElementById("filtrarAssociado").value = "";
+});
+
 init();

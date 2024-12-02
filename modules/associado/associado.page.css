@@ -29,6 +29,7 @@ main .card .card-header .filtros .campo-pesquisar {
     display: flex;
     justify-content: start;
     align-items: center;
+    position: relative;
 }
 
 main .card .card-header .filtros .campo-pesquisar img {
@@ -37,6 +38,16 @@ main .card .card-header .filtros .campo-pesquisar img {
     border: none;
     position: absolute;
     margin-left: 10px;
+}
+
+main .card .card-header .filtros .campo-pesquisar .icone-fechar-pesquisa {
+    position: absolute;
+    top: 10;
+    left: 450px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    right: 10px;
 }
 
 main .card .card-content {
@@ -92,7 +103,7 @@ main .card .card-content table thead {
 }
 
 main .card .card-header .filtros .campo-pesquisar input {
-    width: 350px;
+    width: 500px;
     height: 40px;
     border: none;
     border-radius: 10px;
@@ -107,7 +118,6 @@ main .card .card-header .filtros .campo-pesquisar input {
 
 main .card .card-header .filtros .campo-pesquisar input:focus {
     outline: none;
-    width: 500px;
 }
 
 main .card .card-header .informativo p {
