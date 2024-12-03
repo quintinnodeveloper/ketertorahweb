@@ -21,14 +21,12 @@ export async function getTipoPessoa() {
 
         const tipoPessoaArray = await tipoPessoaResponse.json();
 
-        console.log(tipoPessoaArray);
-
         const tipoPessoaSelect = document.getElementById("tipoPessoa");
 
         tipoPessoaArray.forEach((tipoPessoaResult, index) => {
             const option = document.createElement("option");
             option.value = tipoPessoaResult;
-            option.textContent = tipoPessoaResult;
+            option.textContent = formatarDescricaoTipoPessoa(tipoPessoaResult);
             tipoPessoaSelect.appendChild(option);
         });
         
@@ -38,7 +36,10 @@ export async function getTipoPessoa() {
         
     }
 
+}
 
+function formatarDescricaoTipoPessoa(descricao) {
+    return descricao.replace('_', ' ').toLowerCase().replace(/(^|\s)\S/g, letra => letra.toUpperCase());
 }
 
 init();
