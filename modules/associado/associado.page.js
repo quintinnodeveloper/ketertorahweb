@@ -163,6 +163,9 @@ export function isFormularioAssociadoValido() {
     const carteiraIdentidadeDocumento = document.getElementById("carteiraIdentidadeDocumento").value;
     const orgaoExpeditorDocumento = document.getElementById("orgaoExpeditorDocumento").value;
     const dataExpedicaoDocumento = document.getElementById("dataExpedicaoDocumento").value;
+    const corRaca = Number(document.getElementById("corRaca").value);
+    const estadoCivil = Number(document.getElementById("estadoCivil").value);
+    const tipoSanguineo = Number(document.getElementById("tipoSanguineo").value);
 
     document.getElementById("tipoPessoa").classList.remove("invalid");
     document.getElementById("nomeCompleto").classList.remove("invalid");
@@ -180,6 +183,9 @@ export function isFormularioAssociadoValido() {
     document.getElementById("orgaoExpeditorDocumento").classList.remove("invalid");
     document.getElementById("dataExpedicaoDocumento").classList.remove("invalid");
     document.getElementById("tipoGeneroPessoa").classList.remove("invalid");
+    document.getElementById("corRaca").classList.remove("invalid");
+    document.getElementById("estadoCivil").classList.remove("invalid");
+    document.getElementById("tipoSanguineo").classList.remove("invalid");
 
     switch (getIndiceEtapaAtual()) {
         case 0: // INFO: Dados Básicos
@@ -200,6 +206,21 @@ export function isFormularioAssociadoValido() {
 
             if (generoPessoa === 0) {
                 document.getElementById("tipoGeneroPessoa").classList.add("invalid");
+                return false;
+            }
+
+            if (corRaca === 0) {
+                document.getElementById("corRaca").classList.add("invalid");
+                return false;
+            }
+
+            if (estadoCivil === 0) {
+                document.getElementById("estadoCivil").classList.add("invalid");
+                return false;
+            }
+
+            if (tipoSanguineo === 0) {
+                document.getElementById("tipoSanguineo").classList.add("invalid");
                 return false;
             }
 
