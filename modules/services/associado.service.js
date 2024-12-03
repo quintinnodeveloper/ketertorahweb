@@ -1,9 +1,10 @@
-import {DOC_ASSOCIADO} from "../utility/localstorage.utility.js";
-import {ENDPOINT_PAIS, ENDPOINT_TIPO_PESSOA, URL_API_KETER} from "../utility/api-rest.utility.js";
+import { ENDPOINT_PAIS, ENDPOINT_TIPO_PESSOA, URL_API_KETER, ENDPOINT_TIPO_COR } from "../utility/api-rest.utility.js";
+import { DOC_ASSOCIADO } from "../utility/localstorage.utility.js";
 
 function init() {
     getTipoPessoa();
     getPaisNascimento();
+    getCor();
 }
 
 export async function create(associado) {
@@ -22,6 +23,22 @@ export async function getTipoPessoa() {
             option.value = tipoPessoaResult;
             option.textContent = formatarDescricaoTipoPessoa(tipoPessoaResult);
             tipoPessoaSelect.appendChild(option);
+        });
+    } catch (error) {
+        console.error("ERROR: ", error);
+    }
+}
+
+export async function getCor() {
+    try {
+        const tipoCorResponse = await fetch(URL_API_KETER.concat(ENDPOINT_TIPO_COR));
+        const tipoCorArray = await tipoCorResponse.json();
+        const tipoCorSelect = document.getElementById("corRaca");
+        tipoCorArray.forEach(tipoCorResult => {
+            const option = document.createElement("option");
+            option.value = tipoCorResult;
+            option.textContent = formatarDescricaoTipoPessoa(tipoCorResult);
+            tipoCorSelect.appendChild(option);
         });
     } catch (error) {
         console.error("ERROR: ", error);
