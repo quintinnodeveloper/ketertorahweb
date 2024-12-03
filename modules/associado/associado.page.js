@@ -196,6 +196,7 @@ export function isFormularioAssociadoValido() {
 
             if (nomeCompleto === "") {
                 document.getElementById("nomeCompleto").classList.add("invalid");
+                apresentarToastDanger("Preencha todos os campos obrigatórios!");
                 return false;
             }
 
