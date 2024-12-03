@@ -1,10 +1,9 @@
-import { DOC_ASSOCIADO } from "../utility/localstorage.utility.js";
-import { URL_API_KETER } from "../utility/api-rest.utility.js";
-import { ENDPOINT_PESSOA } from "../utility/api-rest.utility.js";
-import { ENDPOINT_TIPO_PESSOA } from "../utility/api-rest.utility.js";
+import {DOC_ASSOCIADO} from "../utility/localstorage.utility.js";
+import {ENDPOINT_PAIS, ENDPOINT_TIPO_PESSOA, URL_API_KETER} from "../utility/api-rest.utility.js";
 
 function init() {
     getTipoPessoa();
+    getPaisNascimento();
 }
 
 export async function create(associado) {
@@ -39,6 +38,27 @@ export async function getTipoPessoa() {
 
 function formatarDescricaoTipoPessoa(descricao) {
     return descricao.replace('_', ' ').toLowerCase().replace(/(^|\s)\S/g, letra => letra.toUpperCase());
+}
+
+export async function getPaisNascimento() {
+    try {
+
+        const paisResponse = await fetch(URL_API_KETER.concat(ENDPOINT_PAIS));
+
+        const paisArray = await paisResponse.json();
+
+        const paisNascimentoSelect = document.getElementById("paisNascimento");
+
+        paisArray.forEach((paisResult) => {
+            const option = document.createElement("option");
+            option.value = paisResult.code;
+            option.textContent = paisResult.nome;
+            paisNascimentoSelect.appendChild(option);
+        });
+
+    } catch (error) {
+        console.error("ERROR: ", error);
+    }
 }
 
 init();
