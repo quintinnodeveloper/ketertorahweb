@@ -29,7 +29,6 @@ export async function getTipoPessoa() {
             option.textContent = formatarDescricaoTipoPessoa(tipoPessoaResult);
             tipoPessoaSelect.appendChild(option);
         });
-        
 
     } catch (error) {
         console.error("ERROR: ", error);
