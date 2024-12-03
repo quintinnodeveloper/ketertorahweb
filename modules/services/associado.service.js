@@ -4,7 +4,8 @@ import {
     URL_API_KETER, 
     ENDPOINT_TIPO_COR, 
     ENDPOINT_TIPO_ESTADO_CIVIL,
-    ENDPOINT_TIPO_SANGUINEO } from "../utility/api-rest.utility.js";
+    ENDPOINT_TIPO_SANGUINEO,
+    ENDPOINT_TIPO_GENERO } from "../utility/api-rest.utility.js";
 import { DOC_ASSOCIADO } from "../utility/localstorage.utility.js";
 
 function init() {
@@ -13,6 +14,7 @@ function init() {
     getTipoCor();
     getTipoEstadoCivil();
     getTipoSanguineo();
+    getTipoGenero();
 }
 
 export async function create(associado) {
@@ -29,7 +31,7 @@ export async function getTipoPessoa() {
         tipoPessoaArray.forEach(tipoPessoaResult => {
             const option = document.createElement("option");
             option.value = tipoPessoaResult;
-            option.textContent = formatarDescricaoTipoPessoa(tipoPessoaResult);
+            option.textContent = formatarTipoSelect(tipoPessoaResult);
             tipoPessoaSelect.appendChild(option);
         });
     } catch (error) {
@@ -45,7 +47,7 @@ export async function getTipoCor() {
         tipoCorArray.forEach(tipoCorResult => {
             const option = document.createElement("option");
             option.value = tipoCorResult;
-            option.textContent = formatarDescricaoTipoPessoa(tipoCorResult);
+            option.textContent = formatarTipoSelect(tipoCorResult);
             tipoCorSelect.appendChild(option);
         });
     } catch (error) {
@@ -53,7 +55,7 @@ export async function getTipoCor() {
     }
 }
 
-function formatarDescricaoTipoPessoa(descricao) {
+function formatarTipoSelect(descricao) {
     return descricao.replace('_', ' ').toLowerCase().replace(/(^|\s)\S/g, letra => letra.toUpperCase());
 }
 
@@ -75,7 +77,7 @@ export async function getTipoEstadoCivil() {
         estadoCivilArray.forEach(estadoCivilResult => {
             const option = document.createElement("option");
             option.value = estadoCivilResult;
-            option.textContent = formatarDescricaoTipoPessoa(estadoCivilResult);
+            option.textContent = formatarTipoSelect(estadoCivilResult);
             estadoCivilSelect.appendChild(option);
         });
     } catch (error) {
@@ -91,8 +93,24 @@ export async function getTipoSanguineo() {
         tipoSanguineoArray.forEach(tipoSanguineoResult => {
             const option = document.createElement("option");
             option.value = tipoSanguineoResult;
-            option.textContent = formatarDescricaoTipoPessoa(tipoSanguineoResult);
+            option.textContent = formatarTipoSelect(tipoSanguineoResult);
             tipoSanguineoSelect.appendChild(option);
+        });
+    } catch (error) {
+        console.error("ERROR: ", error);
+    }
+}
+
+export async function getTipoGenero() {
+    try {
+        const tipoGeneroResponse = await fetch(URL_API_KETER.concat(ENDPOINT_TIPO_GENERO));
+        const tipoGeneroArray = await tipoGeneroResponse.json();
+        const tipoGeneroSelect = document.getElementById("tipoGeneroPessoa");
+        tipoGeneroArray.forEach(tipoGeneroResult => {
+            const option = document.createElement("option");
+            option.value = tipoGeneroResult;
+            option.textContent = formatarTipoSelect(tipoGeneroResult);
+            tipoGeneroSelect.appendChild(option);
         });
     } catch (error) {
         console.error("ERROR: ", error);
