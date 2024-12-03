@@ -1,11 +1,18 @@
-import { ENDPOINT_PAIS, ENDPOINT_TIPO_PESSOA, URL_API_KETER, ENDPOINT_TIPO_COR, ENDPOINT_TIPO_ESTADO_CIVIL } from "../utility/api-rest.utility.js";
+import { 
+    ENDPOINT_PAIS, 
+    ENDPOINT_TIPO_PESSOA, 
+    URL_API_KETER, 
+    ENDPOINT_TIPO_COR, 
+    ENDPOINT_TIPO_ESTADO_CIVIL,
+    ENDPOINT_TIPO_SANGUINEO } from "../utility/api-rest.utility.js";
 import { DOC_ASSOCIADO } from "../utility/localstorage.utility.js";
 
 function init() {
     getTipoPessoa();
     getPaisNascimento();
-    getCor();
-    getEstadoCivil();
+    getTipoCor();
+    getTipoEstadoCivil();
+    getTipoSanguineo();
 }
 
 export async function create(associado) {
@@ -30,7 +37,7 @@ export async function getTipoPessoa() {
     }
 }
 
-export async function getCor() {
+export async function getTipoCor() {
     try {
         const tipoCorResponse = await fetch(URL_API_KETER.concat(ENDPOINT_TIPO_COR));
         const tipoCorArray = await tipoCorResponse.json();
@@ -60,7 +67,7 @@ export async function getPaisNascimento() {
     }
 }
 
-export async function getEstadoCivil() {
+export async function getTipoEstadoCivil() {
     try {
         const estadoCivilResponse = await fetch(URL_API_KETER.concat(ENDPOINT_TIPO_ESTADO_CIVIL));
         const estadoCivilArray = await estadoCivilResponse.json();
@@ -70,6 +77,22 @@ export async function getEstadoCivil() {
             option.value = estadoCivilResult;
             option.textContent = formatarDescricaoTipoPessoa(estadoCivilResult);
             estadoCivilSelect.appendChild(option);
+        });
+    } catch (error) {
+        console.error("ERROR: ", error);
+    }
+}
+
+export async function getTipoSanguineo() {
+    try {
+        const tipoSanguineoResponse = await fetch(URL_API_KETER.concat(ENDPOINT_TIPO_SANGUINEO));
+        const tipoSanguineoArray = await tipoSanguineoResponse.json();
+        const tipoSanguineoSelect = document.getElementById("tipoSanguineo");
+        tipoSanguineoArray.forEach(tipoSanguineoResult => {
+            const option = document.createElement("option");
+            option.value = tipoSanguineoResult;
+            option.textContent = formatarDescricaoTipoPessoa(tipoSanguineoResult);
+            tipoSanguineoSelect.appendChild(option);
         });
     } catch (error) {
         console.error("ERROR: ", error);
