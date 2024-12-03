@@ -32,6 +32,7 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
         const corRacaID = Number(document.getElementById("corRaca").value);
         const tipoSanguineoID = Number(document.getElementById("tipoSanguineo").value);
         const estadoCivilID = Number(document.getElementById("estadoCivil").value);
+        const generoPessoa = Number(document.getElementById("tipoGeneroPessoa").value);
 
         const cepEndereco = document.getElementById("cepEndereco").value.trim();
         const descricaoEndereco = document.getElementById("descricaoEndereco").value;
@@ -147,6 +148,7 @@ function exibirTabelaFiltro(associados) {
 export function isFormularioAssociadoValido() {
 
     const tipoPessoaID = Number(document.getElementById("tipoPessoa").value);
+    const generoPessoa = Number(document.getElementById("tipoGeneroPessoa").value);
     const nomeCompleto = document.getElementById("nomeCompleto").value.trim();
     const dataNascimento = document.getElementById("dataNascimento").value;
     const paisNascimentoID = Number(document.getElementById("paisNascimento").value);
@@ -177,6 +179,7 @@ export function isFormularioAssociadoValido() {
     document.getElementById("carteiraIdentidadeDocumento").classList.remove("invalid");
     document.getElementById("orgaoExpeditorDocumento").classList.remove("invalid");
     document.getElementById("dataExpedicaoDocumento").classList.remove("invalid");
+    document.getElementById("tipoGeneroPessoa").classList.remove("invalid");
 
     switch (getIndiceEtapaAtual()) {
         case 0: // INFO: Dados Básicos
@@ -195,10 +198,16 @@ export function isFormularioAssociadoValido() {
                 return false;
             }
 
+            if (generoPessoa === 0) {
+                document.getElementById("tipoGeneroPessoa").classList.add("invalid");
+                return false;
+            }
+
             if (paisNascimentoID === 0) {
                 document.getElementById("paisNascimento").classList.add("invalid");
                 return false;
             }
+
             break;
         case 1: // INFO: Endereços
             if (cepEndereco === "") {
