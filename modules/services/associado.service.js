@@ -1,10 +1,11 @@
-import { ENDPOINT_PAIS, ENDPOINT_TIPO_PESSOA, URL_API_KETER, ENDPOINT_TIPO_COR } from "../utility/api-rest.utility.js";
+import { ENDPOINT_PAIS, ENDPOINT_TIPO_PESSOA, URL_API_KETER, ENDPOINT_TIPO_COR, ENDPOINT_TIPO_ESTADO_CIVIL } from "../utility/api-rest.utility.js";
 import { DOC_ASSOCIADO } from "../utility/localstorage.utility.js";
 
 function init() {
     getTipoPessoa();
     getPaisNascimento();
     getCor();
+    getEstadoCivil();
 }
 
 export async function create(associado) {
@@ -59,7 +60,21 @@ export async function getPaisNascimento() {
     }
 }
 
-init();
+export async function getEstadoCivil() {
+    try {
+        const estadoCivilResponse = await fetch(URL_API_KETER.concat(ENDPOINT_TIPO_ESTADO_CIVIL));
+        const estadoCivilArray = await estadoCivilResponse.json();
+        const estadoCivilSelect = document.getElementById("estadoCivil");
+        estadoCivilArray.forEach(estadoCivilResult => {
+            const option = document.createElement("option");
+            option.value = estadoCivilResult;
+            option.textContent = formatarDescricaoTipoPessoa(estadoCivilResult);
+            estadoCivilSelect.appendChild(option);
+        });
+    } catch (error) {
+        console.error("ERROR: ", error);
+    }
+}
 
 function createComponentSelect(arrayParameter, selectParameter) {
     arrayParameter.forEach((paisResult) => {
@@ -69,3 +84,5 @@ function createComponentSelect(arrayParameter, selectParameter) {
         selectParameter.appendChild(option);
     });
 }
+
+init();
