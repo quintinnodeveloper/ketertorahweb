@@ -13,27 +13,19 @@ export async function create(associado) {
 }
 
 export async function getTipoPessoa() {
-
     try {
-        
         const tipoPessoaResponse = await fetch(URL_API_KETER.concat(ENDPOINT_TIPO_PESSOA));
-
         const tipoPessoaArray = await tipoPessoaResponse.json();
-
         const tipoPessoaSelect = document.getElementById("tipoPessoa");
-
-        tipoPessoaArray.forEach((tipoPessoaResult, index) => {
+        tipoPessoaArray.forEach(tipoPessoaResult => {
             const option = document.createElement("option");
             option.value = tipoPessoaResult;
             option.textContent = formatarDescricaoTipoPessoa(tipoPessoaResult);
             tipoPessoaSelect.appendChild(option);
         });
-
     } catch (error) {
         console.error("ERROR: ", error);
-        
     }
-
 }
 
 function formatarDescricaoTipoPessoa(descricao) {
@@ -42,23 +34,21 @@ function formatarDescricaoTipoPessoa(descricao) {
 
 export async function getPaisNascimento() {
     try {
-
         const paisResponse = await fetch(URL_API_KETER.concat(ENDPOINT_PAIS));
-
         const paisArray = await paisResponse.json();
-
-        const paisNascimentoSelect = document.getElementById("paisNascimento");
-
-        paisArray.forEach((paisResult) => {
-            const option = document.createElement("option");
-            option.value = paisResult.code;
-            option.textContent = paisResult.nome;
-            paisNascimentoSelect.appendChild(option);
-        });
-
+        createComponentSelect(paisArray, document.getElementById("paisNascimento"));
     } catch (error) {
         console.error("ERROR: ", error);
     }
 }
 
 init();
+
+function createComponentSelect(arrayParameter, selectParameter) {
+    arrayParameter.forEach((paisResult) => {
+        const option = document.createElement("option");
+        option.value = paisResult.code;
+        option.textContent = paisResult.nome;
+        selectParameter.appendChild(option);
+    });
+}
