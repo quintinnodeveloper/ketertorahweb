@@ -42,20 +42,25 @@
 
     🔵 feature: Implementar submenu de preferências do usuário
 
+### Dados de Versionamento
+
+| **Código**     | **Valor** |
+|----------------|-----------|
+| User | git config --global user.name "Quintinno Developer" |
+| E-mail | git config --global user.email "quintinno.developer@gmail.com" |
+
 ### Padrão de Versionamento
 
-🚀 init: 
-🔵 feature:
-🔴 hotfix:
-🟠 bugfix:
-🟢 release:
-🟡 refactor: 
-🟣 document:
-🔨 resource:  
-
-> git config --global user.email "quintinno.developer@gmail.com"
-
-> git config --global user.name "Quintinno Developer"
+| **Código**     |
+|----------------|
+| 🚀 init:       |
+| 🔵 feature:    |
+| 🔴 hotfix:     |
+| 🟠 bugfix:     |
+| 🟢 release:    |
+| 🟡 refactor:   |
+| 🟣 document:   |
+| 🔨 resource:   |
 
 ### Padrão de codificação
 
