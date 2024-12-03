@@ -42,6 +42,10 @@
 
     🔵 feature: Implementar submenu de preferências do usuário
 
+> KETER2024120202220735TORAH
+
+    🔵 feature: Integrar frontend com api rest
+
 ### Dados de Versionamento
 
 | **Código**     | **Valor** |

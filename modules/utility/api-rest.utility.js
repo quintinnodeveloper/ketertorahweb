@@ -1,0 +1,3 @@
+export const URL_API_KETER = "http://localhost:8080/api";
+export const ENDPOINT_PESSOA = "/pessoa/v1";
+export const ENDPOINT_TIPO_PESSOA = "/pessoa/tipo-pessoa/v1";

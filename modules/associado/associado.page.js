@@ -279,7 +279,7 @@ export function limparDadosFormulario() {
 }
 
 // FIXME: Modo teste de epapas
-document.getElementById("tipoPessoa").value = "1";
+// document.getElementById("tipoPessoa").value = "1";
 document.getElementById("nomeCompleto").value = gerarUUID();
 document.getElementById("dataNascimento").value = new Date("2024-01-01").toISOString().split('T')[0];
 document.getElementById("paisNascimento").value = "1";
