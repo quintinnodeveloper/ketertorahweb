@@ -1,6 +1,5 @@
 import { apresentarToastDanger, apresentarToastSuccess } from "../../component/toast-component/toast.component.js";
 import { fecharDialog, getIndiceEtapaAtual, zerarIndiceEtapaAtual } from "../../resources/scripts/dialog.component.js";
-import { AssociadoModel } from "../model/associado.model.js";
 import { create } from "../services/associado.service.js";
 import { getAssociados, isVerificarDuplicidade } from "../utility/localstorage.utility.js";
 import { aplicarMascaraCEP, aplicarMascaraTelefone } from "../utility/mascaras.utility.js";
@@ -48,12 +47,14 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
         const orgaoExpeditorDocumento = document.getElementById("orgaoExpeditorDocumento").value;
         const dataExpedicaoDocumento = document.getElementById("dataExpedicaoDocumento").value;
 
+        /*
         const associado = new AssociadoModel(
             Math.random(), tipoPessoaID, nomeCompleto, dataNascimento, paisNascimentoID, corRacaID, tipoSanguineoID, estadoCivilID,
             cepEndereco, descricaoEndereco, numeroEndereco, cidadeEnderecoID, bairroEnderecoID, estadoEnderecoID,
             emailContato, telefoneContato,
             carteiraIdentidadeDocumento, orgaoExpeditorDocumento, dataExpedicaoDocumento
         );
+        */
 
         const file = document.getElementById("fotoPerfilUsuario").files[0]; 
 
@@ -67,6 +68,12 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
         } else {
             console.log("Nenhuma imagem foi selecionada.");
         }
+
+        const associado = {
+            nomeCompleto: getNomeCompletoFormulario(),
+            dataNascimento: getDataNascimentoFormulario(),
+            tipoPessoa: getTipoPessoaFormulario(),
+        };
 
         console.log("ASSOCIADO: ", associado);
 
@@ -210,20 +217,20 @@ export function isFormularioAssociadoValido() {
                 return false;
             }
 
-            if (corRaca === 0) {
-                document.getElementById("corRaca").classList.add("invalid");
-                return false;
-            }
+            // if (corRaca === 0) {
+            //     document.getElementById("corRaca").classList.add("invalid");
+            //     return false;
+            // }
 
             if (estadoCivil === 0) {
                 document.getElementById("estadoCivil").classList.add("invalid");
                 return false;
             }
 
-            if (tipoSanguineo === 0) {
-                document.getElementById("tipoSanguineo").classList.add("invalid");
-                return false;
-            }
+            // if (tipoSanguineo === 0) {
+            //     document.getElementById("tipoSanguineo").classList.add("invalid");
+            //     return false;
+            // }
 
             if (paisNascimentoID === 0) {
                 document.getElementById("paisNascimento").classList.add("invalid");
@@ -369,5 +376,17 @@ document.getElementById("iconeFecharPesquisa").addEventListener("click", functio
     document.getElementById("filtrarAssociado").value = "";
     exibirTabela();
 });
+
+function getNomeCompletoFormulario() {
+    return document.getElementById("nomeCompleto").value;
+};
+
+function getDataNascimentoFormulario() {
+    return document.getElementById("dataNascimento").value;
+}
+
+function getTipoPessoaFormulario() {
+    return document.getElementById("tipoPessoa").value;
+}
 
 init();
