@@ -46,6 +46,10 @@
 
     🔵 feature: Integrar frontend com api rest
 
+> KETER2024120502114649TORAH
+> 
+>   🔵 feature: Configurar projeto com Node
+
 ### Dados de Versionamento
 
 | **Código**     | **Valor** |
