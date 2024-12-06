@@ -125,9 +125,9 @@ export async function exibirTabela() {
 
 document.addEventListener('DOMContentLoaded', exibirTabela);
 
-document.getElementById("filtrarAssociado").addEventListener("input", function () {
+document.getElementById("filtrarAssociado").addEventListener("input", async function () {
     let pesquisa = this.value.toLowerCase();
-    let associadoArray = getAssociados();
+    let associadoArray = await getAssociados();
     let associadosFiltrados = associadoArray.filter(associado =>
         associado.nomeCompleto.toLowerCase().includes(pesquisa)
     );
