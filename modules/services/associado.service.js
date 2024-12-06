@@ -1,3 +1,4 @@
+import { exibirTabela } from "../associado/associado.page.js";
 import {
     ENDPOINT_PAIS,
     ENDPOINT_TIPO_PESSOA,
@@ -140,6 +141,7 @@ export async function createAssociado(associado) {
             throw new Error("Erro na requisição! ", response.statusText, response.text);
         }
         const responseData = await response.json();
+        exibirTabela();
         return responseData;
     } catch (error) {
         console.error("ERROR: ", error);

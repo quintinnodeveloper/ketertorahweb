@@ -56,6 +56,7 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
         );
         */
 
+        /*
         const file = document.getElementById("fotoPerfilUsuario").files[0]; 
 
         if (file) {
@@ -68,6 +69,7 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
         } else {
             console.log("Nenhuma imagem foi selecionada.");
         }
+        */
 
         const associado = {
             nomeCompleto: getNomeCompletoFormulario(),
@@ -78,16 +80,16 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
                 code: getPaisNascimentoFormulario()
             },
             tipoEstadoCivilEnumeration: getTipoEstadoCivilFormulario(),
+            ativo: true
         };
 
-        console.log("ASSOCIADO: ", associado);
+        console.table(associado);
 
         if (!isVerificarDuplicidade(associado.nomeCompleto)) {
             createLocalstorage(associado);
             createAssociado(associado);
             apresentarToastSuccess();
             fecharDialog();
-            exibirTabela();
             limparDadosFormulario();
         } else {
             throw new Error("Associado já cadastrado no sistema!");
@@ -99,7 +101,7 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
 
 });
 
-async function exibirTabela() {
+export async function exibirTabela() {
 
     let associadoArray = await getAssociados();
 
