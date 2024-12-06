@@ -1,9 +1,9 @@
-import {apresentarToastDanger, apresentarToastSuccess} from "../../component/toast-component/toast.component.js";
-import {fecharDialog, getIndiceEtapaAtual, zerarIndiceEtapaAtual} from "../../resources/scripts/dialog.component.js";
-import {createAssociado, createLocalstorage} from "../services/associado.service.js";
-import {getAssociados, isVerificarDuplicidade} from "../utility/localstorage.utility.js";
-import {aplicarMascaraCEP, aplicarMascaraTelefone} from "../utility/mascaras.utility.js";
-import {gerarUUID} from "../utility/uuid.utility.js";
+import { apresentarToastDanger, apresentarToastSuccess } from "../../component/toast-component/toast.component.js";
+import { fecharDialog, getIndiceEtapaAtual, zerarIndiceEtapaAtual } from "../../resources/scripts/dialog.component.js";
+import { createAssociado, createLocalstorage, getAssociados } from "../services/associado.service.js";
+import { isVerificarDuplicidade } from "../utility/localstorage.utility.js";
+import { aplicarMascaraCEP, aplicarMascaraTelefone } from "../utility/mascaras.utility.js";
+import { gerarUUID } from "../utility/uuid.utility.js";
 
 const abrirModal = document.getElementById("abrir-modal");
 const dialog = document.getElementById("dialog");
@@ -99,11 +99,9 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
 
 });
 
-function exibirTabela() {
+async function exibirTabela() {
 
-    let associadoArray = getAssociados();
-
-    associadoArray.sort((a, b) => a.nomeCompleto.localeCompare(b.nomeCompleto));
+    let associadoArray = await getAssociados();
 
     const tbody = document.querySelector("table tbody");
 

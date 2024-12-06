@@ -6,5 +6,6 @@ export function isVerificarDuplicidade(nome) {
 }
 
 export function getAssociados() {
-    return JSON.parse(localStorage.getItem(DOC_ASSOCIADO)) || [];
+    const associadoArray = JSON.parse(localStorage.getItem(DOC_ASSOCIADO)) || [];
+    return associadoArray.sort((a, b) => a.nomeCompleto.localeCompare(b.nomeCompleto));
 }

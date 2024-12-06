@@ -146,4 +146,9 @@ export async function createAssociado(associado) {
     }
 }
 
+export async function getAssociados() {
+    const associadoResponse = await fetch(URL_API_KETER.concat(ENDPOINT_PESSOA));
+    return await associadoResponse.json();
+}
+
 init();
