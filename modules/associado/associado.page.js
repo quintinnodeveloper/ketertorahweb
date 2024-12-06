@@ -73,6 +73,9 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
             nomeCompleto: getNomeCompletoFormulario(),
             dataNascimento: getDataNascimentoFormulario(),
             tipoPessoa: getTipoPessoaFormulario(),
+            tipoGenero: getTipoGeneroFormulario(),
+            paisNascimentoID: getPaisNascimentoFormulario(),
+            estadoCivil: getTipoEstadoCivilFormulario(),
         };
 
         console.log("ASSOCIADO: ", associado);
@@ -387,6 +390,18 @@ function getDataNascimentoFormulario() {
 
 function getTipoPessoaFormulario() {
     return document.getElementById("tipoPessoa").value;
+}
+
+function getTipoGeneroFormulario() {
+    return document.getElementById("tipoGeneroPessoa").value;
+}
+
+function getPaisNascimentoFormulario() {
+    return document.getElementById("paisNascimento").value;
+}
+
+function getTipoEstadoCivilFormulario() {
+    return document.getElementById("estadoCivil").value;
 }
 
 init();
