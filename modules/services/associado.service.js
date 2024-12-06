@@ -1,11 +1,12 @@
-import { 
-    ENDPOINT_PAIS, 
-    ENDPOINT_TIPO_PESSOA, 
-    URL_API_KETER, 
-    ENDPOINT_TIPO_COR, 
+import {
+    ENDPOINT_PAIS,
+    ENDPOINT_TIPO_PESSOA,
+    URL_API_KETER,
+    ENDPOINT_TIPO_COR,
     ENDPOINT_TIPO_ESTADO_CIVIL,
     ENDPOINT_TIPO_SANGUINEO,
-    ENDPOINT_TIPO_GENERO } from "../utility/api-rest.utility.js";
+    ENDPOINT_TIPO_GENERO, ENDPOINT_PESSOA
+} from "../utility/api-rest.utility.js";
 import { DOC_ASSOCIADO } from "../utility/localstorage.utility.js";
 
 function init() {
@@ -17,7 +18,7 @@ function init() {
     getTipoGenero();
 }
 
-export async function create(associado) {
+export async function createLocalstorage(associado) {
     let associadoArray = JSON.parse(localStorage.getItem(DOC_ASSOCIADO)) || [];
     associadoArray.push(associado);
     localStorage.setItem(DOC_ASSOCIADO, JSON.stringify(associadoArray));
@@ -124,6 +125,25 @@ function createComponentSelect(arrayParameter, selectParameter) {
         option.textContent = paisResult.nome;
         selectParameter.appendChild(option);
     });
+}
+
+export async function createAssociado(associado) {
+    try {
+        const response = await fetch(URL_API_KETER.concat(ENDPOINT_PESSOA), {
+            method: "POST",
+            body: JSON.stringify(associado),
+            headers: {
+                "Content-Type": "application/json",
+            }
+        });
+        if(!response.ok) {
+            throw new Error("Erro na requisição! ", response.statusText, response.text);
+        }
+        const responseData = await response.json();
+        return responseData;
+    } catch (error) {
+        console.error("ERROR: ", error);
+    }
 }
 
 init();
