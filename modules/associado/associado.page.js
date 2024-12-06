@@ -103,7 +103,13 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
 
 export async function exibirTabela() {
 
+    const spinner = document.getElementById("apresentarIconeCarregamento");
+
+    spinner.style.display = "flex";
+
     let associadoArray = await getAssociados();
+
+    spinner.style.display = "none";
 
     const tbody = document.querySelector("table tbody");
 
