@@ -103,13 +103,9 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
 
 export async function exibirTabela() {
 
-    const spinner = document.getElementById("apresentarIconeCarregamento");
-
-    spinner.style.display = "flex";
+    apresentarIconeCarregamento();
 
     let associadoArray = await getAssociados();
-
-    spinner.style.display = "none";
 
     const tbody = document.querySelector("table tbody");
 
@@ -329,7 +325,7 @@ export function limparDadosFormulario() {
 }
 
 // FIXME: Modo teste de epapas
-// document.getElementById("tipoPessoa").value = "1";
+// document.getElementById("tipoPessoa").value = "PESSOA_FISICA";
 document.getElementById("nomeCompleto").value = gerarUUID();
 document.getElementById("dataNascimento").value = new Date("2024-01-01").toISOString().split('T')[0];
 document.getElementById("paisNascimento").value = "1";
@@ -411,6 +407,20 @@ function getPaisNascimentoFormulario() {
 
 function getTipoEstadoCivilFormulario() {
     return document.getElementById("estadoCivil").value;
+}
+
+export function apresentarIconeCarregamento() {
+    const spinner = document.getElementById("apresentarIconeCarregamento");
+    if (spinner) {
+        spinner.style.display = "flex";
+    }
+}
+
+export function esconderIconeCarregamento() {
+    const spinner = document.getElementById("apresentarIconeCarregamento");
+    if (spinner) {
+        spinner.style.display = "none";
+    }
 }
 
 init();

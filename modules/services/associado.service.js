@@ -1,12 +1,13 @@
 import { exibirTabela } from "../associado/associado.page.js";
 import {
     ENDPOINT_PAIS,
-    ENDPOINT_TIPO_PESSOA,
-    URL_API_KETER,
+    ENDPOINT_PESSOA,
     ENDPOINT_TIPO_COR,
     ENDPOINT_TIPO_ESTADO_CIVIL,
+    ENDPOINT_TIPO_GENERO,
+    ENDPOINT_TIPO_PESSOA,
     ENDPOINT_TIPO_SANGUINEO,
-    ENDPOINT_TIPO_GENERO, ENDPOINT_PESSOA
+    URL_API_KETER
 } from "../utility/api-rest.utility.js";
 import { DOC_ASSOCIADO } from "../utility/localstorage.utility.js";
 
