@@ -101,17 +101,20 @@ document.getElementById("botaoCadastrar").addEventListener("click", function () 
 
 });
 
+let numeroPagina = 0;
+const tamanhoPagina = 10;
+
 export async function exibirTabela() {
 
     apresentarIconeCarregamento();
 
-    let associadoArray = await getAssociados();
+    let associadoArray = await getAssociados(numeroPagina, tamanhoPagina);
 
     const tbody = document.querySelector("table tbody");
 
     tbody.innerHTML = "";
 
-    associadoArray.forEach((associado, index) => {
+    associadoArray.content.forEach((associado, index) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
         <td>${index + 1}</td>

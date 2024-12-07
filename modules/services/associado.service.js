@@ -149,8 +149,9 @@ export async function createAssociado(associado) {
     }
 }
 
-export async function getAssociados() {
-    const associadoResponse = await fetch(URL_API_KETER.concat(ENDPOINT_PESSOA));
+export async function getAssociados(numeroPagina, tamanhoPagina) {
+    const urlRequisicao = `${URL_API_KETER.concat(ENDPOINT_PESSOA)}?numeroPagina=${numeroPagina}&tamanhoPagina=${tamanhoPagina}`;
+    const associadoResponse = await fetch(urlRequisicao);
     return await associadoResponse.json();
 }
 
